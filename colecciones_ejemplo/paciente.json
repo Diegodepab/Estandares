@@ -1,0 +1,30 @@
+{
+    "_id": "ObjectId(1)",
+    "nombre": "Juan",
+    "apellido": "García",
+    "fecha_nacimiento": "1980-05-15",
+    "sexo": "masculino",
+    "etnia":"negro",
+    "informacion_contacto": {
+      "telefono": "+34 123 456 789",
+      "correo": "juan.garcia@example.com",
+      "direccion": {
+        "calle": "Calle Mayor 45",
+        "ciudad": "Madrid",
+        "codigo_postal": "28013",
+        "pais": "España"
+      }
+    },
+    "historial":[{
+        "tratamientos":423489,
+        "hospital":457075,
+        "fecha":44959
+    },
+    {
+        ...
+    }
+
+
+]
+
+  }

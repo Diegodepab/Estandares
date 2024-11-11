@@ -1,0 +1,60 @@
+{
+    "_id": "ObjectId('648c00a6f2d7f9a2b3c4d5e6')",
+    "tratamiento_id": "TRT-2023-001",
+    "nombre_tratamiento": "Tratamiento COVID-19 Agudo",
+    "descripcion": "Protocolo de tratamiento para casos severos de COVID-19 en UCI",
+    "enfermedad": {
+      "nombre": "COVID-19",
+      "categoria": "Infección viral",
+      "sintomas": ["Fiebre", "Dificultad para respirar", "Fatiga"],
+      "estado_severidad": "Severo"
+    },
+    "regimen": {
+      "duracion_dias": 14,
+      "frecuencia_dosis": "Cada 24 horas",
+      "via_administracion": "Intravenosa",
+      "monitorizacion": {
+        "frecuencia_monitorizacion": "Cada 6 horas",
+        "parametros": [
+          {
+            "nombre_parametro": "Niveles de oxígeno",
+            "unidad": "%",
+            "valor_referencia": "95-100"
+          },
+          {
+            "nombre_parametro": "Frecuencia respiratoria",
+            "unidad": "rpm",
+            "valor_referencia": "12-20"
+          }
+        ]
+      }
+    },
+    "medicamentos": [
+      {
+        "medicamento_id": "ObjectId('8d5b6e7f1c3a4b2d9a5f4e01')",
+        "nombre": "Remdesivir",
+        "dosis": "200 mg inicial, 100 mg diario",
+        "frecuencia": "Diario",
+        "efectos_secundarios": ["Náuseas", "Dolor de cabeza"],
+        "interacciones": [
+          {
+            "medicamento_interaccion": "Hidroxicloroquina",
+            "efecto_interaccion": "Disminución de eficacia de Remdesivir"
+          }
+        ]
+      },
+      {
+        "medicamento_id": "ObjectId('7b3e5c9d8f6a4d2c9e1b0a01')",
+        "nombre": "Dexametasona",
+        "dosis": "6 mg",
+        "frecuencia": "Cada 24 horas",
+        "efectos_secundarios": ["Aumento de glucosa", "Presión arterial alta"],
+        "interacciones": [
+          {
+            "medicamento_interaccion": "Insulina",
+            "efecto_interaccion": "Incremento de glucosa en sangre"
+          }
+        ]
+      }
+    ]
+  }
