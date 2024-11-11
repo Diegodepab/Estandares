@@ -3,6 +3,8 @@
     "nombre": "Juan",
     "apellido": "García",
     "fecha_nacimiento": "1980-05-15",
+    "dni":2222222Q,
+    "nss": 289930022578
     "sexo": "masculino",
     "etnia":"negro",
     "informacion_contacto": {
