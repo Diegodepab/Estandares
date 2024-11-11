@@ -1,0 +1,62 @@
+{
+    "_id": "ObjectId('648c00a6f2d7f9a2b3c4d5e6')",
+    "nombre_hospital": "Hospital General de Madrid",
+    "direccion": {
+      "calle": "Calle de la Salud, 123",
+      "ciudad": "Madrid",
+      "codigo_postal": "28001",
+      "pais": "España"
+    },
+    "departamentos": [
+      {
+        "departamento_id": "ObjectId('5d7bfa12c17c73a8e4f2e5d1')",
+        "nombre": "Cardiología",
+        "extension": "1234",
+        "servicios": ["Consulta de cardiología", "Rehabilitación cardiaca", "Electrofisiología"],
+        "medicos": [
+          {
+            "medico_id": "ObjectId('6e1a5d8baf7c4c67a123d89a')",
+            "nombre": "Dr. Carlos López",
+            "especialidad": "Cardiología",
+            "años_experiencia": 15,
+            "horario": {
+              "dias_laborales": ["Lunes", "Miércoles", "Viernes"],
+              "horas": "08:00 - 14:00"
+            }
+          },
+          {
+            "medico_id": "ObjectId('7b3a6e2fc15b3d89c7f4e012')",
+            "nombre": "Dra. Ana Ruiz",
+            "especialidad": "Electrofisiología",
+            "años_experiencia": 10,
+            "horario": {
+              "dias_laborales": ["Martes", "Jueves"],
+              "horas": "10:00 - 16:00"
+            }
+          }
+        ]
+      },
+      {
+        "departamento_id": "ObjectId('6a9cfb45b12e5f789f7e5c01')",
+        "nombre": "Neurología",
+        "extension": "5678",
+        "servicios": ["Consulta de neurología", "Terapia intensiva neurológica", "Unidad de epilepsia"],
+        "medicos": [
+          {
+            "medico_id": "ObjectId('8c1d9e3fb67f1c34d12e4f89')",
+            "nombre": "Dr. Manuel Fernández",
+            "especialidad": "Neurología",
+            "años_experiencia": 20,
+            "horario": {
+              "dias_laborales": ["Lunes a Viernes"],
+              "horas": "09:00 - 15:00"
+            }
+          }
+        ]
+      }
+    ],
+    "contacto_emergencia": {
+      "telefono": "+34 912 345 678",
+      "email": "emergencias@hospitalgeneral.es"
+    }
+  }
