@@ -1,0 +1,21 @@
+No hace falta
+Cada 12 horas
+Cada 24 horas
+Cada 30 minutos
+1 hora después de tratamiento
+Cada 2 horas
+Cada 6 horas
+Cada 3 días
+Antes de cada dosis
+Después de cada procedimiento
+Al inicio de tratamiento
+Cada vez que se realice un cambio en la dosis
+Cada 48 horas
+Cada semana
+Solo cuando se presenten síntomas
+Cada 15 minutos en casos críticos
+Cada 4 horas
+Diariamente durante la primera semana
+Cada 2 días
+De forma continua durante las primeras 24 horas
+Al finalizar el tratamiento

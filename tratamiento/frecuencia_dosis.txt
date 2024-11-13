@@ -1,0 +1,24 @@
+Cada 24 horas
+Cada 12 horas
+Cada 8 horas
+Cada 6 horas
+Cada 4 horas
+Cada 3 horas
+Cada 2 horas
+Dos veces al día
+Tres veces al día
+Cuatro veces al día
+Una vez al día
+Cada mañana
+Cada noche
+Antes de dormir
+Antes de las comidas
+Después de las comidas
+Cada fin de semana
+Cada lunes, miércoles y viernes
+Cada martes y jueves
+Cada mes
+Según sea necesario
+Cada semana
+En días alternos
+Cada 48 horas

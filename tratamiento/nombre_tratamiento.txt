@@ -1,0 +1,201 @@
+Terapia Antirretroviral para VIH
+Tratamiento de Hipertensión Arterial
+Terapia con Inmunosupresores
+Tratamiento de Diabetes Tipo 2
+Tratamiento de Cáncer de Pulmón
+Terapia con Anticoagulantes
+Tratamiento de Insuficiencia Cardíaca
+Terapia Biológica para Artritis Reumatoide
+Tratamiento de Enfermedad de Crohn
+Tratamiento de Hepatitis C Crónica
+Terapia Hormonal Sustitutiva
+Tratamiento de Esclerosis Múltiple
+Terapia Antifúngica Sistémica
+Tratamiento de Asma Crónica
+Tratamiento de Enfermedad Renal Crónica
+Terapia de Reemplazo de Enzimas
+Tratamiento de Síndrome de Ovario Poliquístico
+Tratamiento de Acné Severo
+Terapia de Rehabilitación Pulmonar
+Tratamiento de Insuficiencia Venosa Crónica
+Tratamiento de Epilepsia Refractaria
+Terapia de Soporte Nutricional
+Tratamiento de Migraña Crónica
+Terapia de Oxígeno a Largo Plazo
+Tratamiento de Psoriasis Moderada
+Tratamiento de Fibrilación Auricular
+Terapia Génica para Distrofia Muscular
+Tratamiento de Hipotiroidismo
+Terapia con Plasma Rico en Plaquetas
+Tratamiento de Demencia Tipo Alzheimer
+Tratamiento de Obesidad Mórbida
+Terapia Antibiótica para Infección Urinaria
+Tratamiento de Linfoma de Hodgkin
+Tratamiento de Úlcera Gástrica
+Terapia con Antivirales para Gripe
+Tratamiento de Leucemia Linfocítica Crónica
+Terapia con Antihistamínicos
+Tratamiento de Síndrome de Apnea Obstructiva
+Tratamiento de Cáncer de Piel no Melanoma
+Terapia con Estatinas para Hiperlipidemia
+Tratamiento de Enfermedad Pulmonar Obstructiva Crónica
+Terapia con Insulina para Diabetes Tipo 1
+Tratamiento de Angina de Pecho
+Terapia con Antiinflamatorios no Esteroideos
+Tratamiento de Dislipidemia
+Tratamiento de Enfermedad de Parkinson
+Terapia con Broncodilatadores
+Tratamiento de Colitis Ulcerosa
+Tratamiento de Infección por Helicobacter pylori
+Terapia Antitrombótica
+Tratamiento de Cáncer de Colon
+Tratamiento de Esquizofrenia
+Tratamiento de Insomnio Crónico
+Terapia de Rehidratación Oral
+Tratamiento de Síndrome Metabólico
+Tratamiento de Trombosis Venosa Profunda
+Tratamiento de Neuralgia del Trigémino
+Terapia de Desensibilización para Alergias
+Tratamiento de Síndrome de Tourette
+Tratamiento de Lupus Eritematoso Sistémico
+Terapia con Bloqueadores de los Canales de Calcio
+Tratamiento de Hipertensión Pulmonar
+Tratamiento de Enfermedad de Graves
+Terapia de Férulas para Escoliosis
+Tratamiento de Osteoporosis
+Tratamiento de Déficit de Atención e Hiperactividad
+Terapia Electroconvulsiva
+Tratamiento de Enfermedad de Wilson
+Terapia con Bifosfonatos
+Tratamiento de Gota Crónica
+Tratamiento de Fibrosis Quística
+Tratamiento de Enfermedad de Huntington
+Terapia con Inhibidores de la ECA
+Tratamiento de Cirrosis Hepática
+Terapia con Inhibidores de la Aromatasa
+Tratamiento de Síndrome de Fatiga Crónica
+Terapia de Exposición Prolongada para TEPT
+Tratamiento de Disfunción Eréctil
+Tratamiento de Cáncer de Próstata
+Terapia de Resonancia Magnética Focalizada
+Tratamiento de Glaucoma de Ángulo Abierto
+Tratamiento de Insuficiencia Hepática
+Tratamiento de Enfermedad de Behçet
+Terapia con Probioticos para Infección Intestinal
+Tratamiento de Alergia al Polvo Doméstico
+Tratamiento de Cáncer de Páncreas
+Terapia de Modulación del Microbioma
+Tratamiento de Neumonía Bacteriana
+Tratamiento de Aterosclerosis
+Terapia con Antidepresivos para Depresión Mayor
+Tratamiento de Hipogonadismo Masculino
+Tratamiento de Cistitis Intersticial
+Terapia de Biofeedback
+Tratamiento de Síndrome de Intestino Irritable
+Tratamiento de Síndrome de Guillain-Barré
+Terapia con Antivirales para Herpes Zóster
+Tratamiento de Pancreatitis Crónica
+Tratamiento de Síndrome de Sjögren
+Terapia Cognitivo-Conductual para Trastorno Obsesivo-Compulsivo
+Tratamiento de Polimialgia Reumática
+Tratamiento de Aneurisma Aórtico
+Tratamiento de Inmunodeficiencia Primaria
+Terapia con Anticuerpos Monoclonales
+Tratamiento de EPOC Agudizada
+Tratamiento de Sarcoidosis
+Tratamiento de Endometriosis
+Tratamiento COVID-19 Agudo
+Terapia de Reemplazo de Hormona del Crecimiento
+Tratamiento de Infecciones de Piel por Estafilococo
+Terapia con Antiepilépticos
+Tratamiento de Artritis Psoriásica
+Terapia de Modulación Inmune
+Tratamiento de Cáncer de Mama Triple Negativo
+Terapia con Antihipertensivos
+Tratamiento de Estenosis Aórtica
+Terapia de Oxigenación Hiperbárica
+Tratamiento de Insuficiencia Suprarrenal
+Tratamiento de Laringitis Crónica
+Terapia de Reemplazo de Tejido Dañado
+Tratamiento de Cardiomiopatía Dilatada
+Terapia con Inhibidores de PDE5
+Tratamiento de Hernia de Disco
+Terapia con Esteroides Anabólicos
+Tratamiento de Miastenia Gravis
+Terapia de Infusión Intravenosa
+Tratamiento de Infección por Papilomavirus Humano
+Terapia con Inmunoglobulinas
+Tratamiento de Preeclampsia
+Tratamiento de Trombocitopenia Idiopática
+Terapia de Movilización Pasiva Continua
+Tratamiento de Hiperplasia Prostática Benigna
+Terapia con Inmunoterapia Dirigida
+Tratamiento de Embolia Pulmonar
+Tratamiento de Fractura de Cadera
+Terapia con Corticoides Inhalados
+Tratamiento de Sindrome de Cushing
+Terapia de Dialisis Peritoneal
+Tratamiento de Varicela
+Terapia con Agentes Antifibrinolíticos
+Tratamiento de Fascitis Plantar
+Tratamiento de Eccema Atópico
+Terapia de Lisis de Cálculos Renales
+Tratamiento de Degeneración Macular Asociada a la Edad
+Terapia con Diuréticos
+Tratamiento de Enfermedad de Kawasaki
+Terapia Antirretroviral Combinada
+Tratamiento de Anemia de Células Falciformes
+Tratamiento de Heridas Crónicas
+Tratamiento de Hepatitis B
+Terapia con Bloqueadores Beta
+Tratamiento de Enfermedad de Lyme
+Tratamiento de Miocardiopatía Hipertrófica
+Terapia con Anticolinérgicos
+Tratamiento de Linfedema
+Tratamiento de Angioedema Hereditario
+Terapia con Antioxidantes para Enfermedades Oculares
+Tratamiento de Alopecia Areata
+Terapia con Agentes Quelantes
+Tratamiento de Degeneración del Disco Intervertebral
+Tratamiento de Anemia Ferropénica
+Tratamiento de Trastorno de Ansiedad Generalizada
+Tratamiento de Convulsiones Neonatales
+Terapia con Trasplante de Células Madre
+Tratamiento de Diverticulitis Aguda
+Terapia de Desintoxicación de Drogas
+Tratamiento de Encefalopatía Hepática
+Terapia con Agentes Antineoplásicos
+Tratamiento de Infección por Virus de Epstein-Barr
+Terapia con Inhibidores de la DPP-4
+Tratamiento de Hipertensión Intracraneal
+Tratamiento de Mieloma Múltiple
+Terapia con Inhibidores de la Tirosina Quinasa
+Tratamiento de Síndrome de Prader-Willi
+Tratamiento de Esclerodermia
+Terapia con Fármacos Inmunomoduladores
+Tratamiento de Gastroenteritis Aguda
+Terapia de Plasmaféresis
+Tratamiento de Espina Bífida
+Tratamiento de Síndrome Antifosfolípido
+Terapia con Terapia Fotodinámica
+Tratamiento de Síndrome de Stevens-Johnson
+Tratamiento de Síndrome del QT Largo
+Terapia con Agentes Vasodilatadores
+Tratamiento de Disquinesia Tardía
+Tratamiento de Anemia Aplásica
+Tratamiento de Uveítis Anterior
+Terapia con Inhibidores de la PCSK9
+Tratamiento de Enfermedad de Paget Ósea
+Tratamiento de Acalasia
+Terapia de Hidratación Intravenosa
+Tratamiento de Insuficiencia Mitral
+Terapia con Anticonvulsivantes para Neuralgia
+Tratamiento de Colangitis Esclerosante Primaria
+Tratamiento de Queratosis Actínica
+Terapia con Antagonistas de Receptores de Angiotensina II
+Tratamiento de Absceso Cerebral
+Terapia con Terapia Ocupacional
+Tratamiento de Melanoma Metastásico
+Terapia con Antagonistas de la Aldosterona
+Tratamiento de Prolapso Rectal
+

@@ -1,0 +1,35 @@
+Niveles de oxígeno
+Glucosa en sangre
+Presión arterial
+Frecuencia cardíaca
+Temperatura corporal
+Tasa de respiración
+Niveles de colesterol
+Saturación de oxígeno
+Creatinina sérica
+Electrolitos en sangre
+Hemoglobina
+Conteo de plaquetas
+Índice de masa corporal (IMC)
+Función renal
+Niveles de potasio
+Niveles de sodio
+Ácido láctico
+Tasa de filtración glomerular (TFG)
+Función hepática
+Niveles de triglicéridos
+Tensión ocular
+Conteo de glóbulos blancos
+Niveles de calcio
+Test de función tiroidea
+Rendimiento pulmonar
+Flujo urinario
+Perfil lipídico
+VSG (Velocidad de Sedimentación Globular)
+Niveles de bilirrubina
+Niveles de lactato
+Tasa de coagulación sanguínea
+Conteo de glóbulos rojos
+Gasometría arterial
+Concentración de ácido úrico
+Rendimiento cardiovascular
