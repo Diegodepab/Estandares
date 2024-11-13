@@ -18,12 +18,10 @@
         "parametros": [
           {
             "nombre_parametro": "Niveles de oxígeno",
-            "unidad": "%",
             "valor_referencia": "95-100"
           },
           {
             "nombre_parametro": "Frecuencia respiratoria",
-            "unidad": "rpm",
             "valor_referencia": "12-20"
           }
         ]
