@@ -1,0 +1,200 @@
+Terapia Antirretroviral para VIH,Síndrome de Inmunodeficiencia Adquirida (SIDA),Inmunológica,3
+Tratamiento de Hipertensión Arterial,Enfermedad Cardiovascular,Circulatoria,2
+Terapia con Inmunosupresores,Infecciones oportunistas,Infecciosa,3
+Tratamiento de Diabetes Tipo 2,Complicaciones de la Diabetes,Endocrina,2
+Tratamiento de Cáncer de Pulmón,Cáncer,Oncológica,4
+Terapia con Anticoagulantes,Trombosis,Circulatoria,2
+Tratamiento de Insuficiencia Cardíaca,Insuficiencia Cardíaca,Circulatoria,3
+Terapia Biológica para Artritis Reumatoide,Artritis Reumatoide,Reumatológica,2
+Tratamiento de Enfermedad de Crohn,Enfermedad Inflamatoria Intestinal,Digestiva,3
+Tratamiento de Hepatitis C Crónica,Hepatitis C,Digestiva,3
+Terapia Hormonal Sustitutiva,Menopausia,Ginecológica,1
+Tratamiento de Esclerosis Múltiple,Esclerosis Múltiple,Nerviosa,3
+Terapia Antifúngica Sistémica,Infección Fúngica,Infecciosa,2
+Tratamiento de Asma Crónica,Asma Respiratoria,Respiratoria,2
+Tratamiento de Enfermedad Renal Crónica,Insuficiencia Renal,Renal,3
+Terapia de Reemplazo de Enzimas,Enfermedades Metabólicas,Metabólica,2
+Tratamiento de Síndrome de Ovario Poliquístico,Síndrome de Ovario Poliquístico,Ginecológica,2
+Tratamiento de Acné Severo,Acné Dermatológica,Derma,3
+Terapia de Rehabilitación Pulmonar,Enfermedad Pulmonar Obstructiva Crónica,Respiratoria,2
+Tratamiento de Insuficiencia Venosa Crónica,Insuficiencia Venosa,Circulatoria,2
+Tratamiento de Epilepsia Refractaria,Epilepsia,Nerviosa,3
+Terapia de Soporte Nutricional,Desnutrición,Nutricional,2
+Tratamiento de Migraña Crónica,Migraña,Nerviosa,2
+Terapia de Oxígeno a Largo Plazo,Insuficiencia Respiratoria,Respiratoria,3
+Tratamiento de Psoriasis Moderada,Psoriasis Dermatológica,Derma,2
+Tratamiento de Fibrilación Auricular,Fibrilación Auricular,Circulatoria,2
+Terapia Génica para Distrofia Muscular,Distrofia Muscular,Nerviosa,4
+Tratamiento de Hipotiroidismo,Hipotiroidismo,Endocrina,1
+Terapia con Plasma Rico en Plaquetas,Lesiones o Degeneración Articular,Reumatológica,1
+Tratamiento de Demencia Tipo Alzheimer,Demencia,Neurológica,4
+Tratamiento de Obesidad Mórbida,Obesidad,Metabólica,3
+Terapia Antibiótica para Infección Urinaria,Infección Urinaria,Infecciosa,2
+Tratamiento de Linfoma de Hodgkin,Linfoma Oncológico,Oncológica,4
+Tratamiento de Úlcera Gástrica,Úlcera Gástrica,Digestiva,2
+Terapia con Antivirales para Gripe,Gripe,Infecciosa,1
+Tratamiento de Leucemia Linfocítica Crónica,Leucemia,Oncológica,4
+Terapia con Antihistamínicos,Alergia,Alergológica,1
+Tratamiento de Síndrome de Apnea Obstructiva,Apnea del Sueño,Respiratoria,2
+Tratamiento de Cáncer de Piel no Melanoma,Cáncer de Piel,Oncológica,3
+Terapia con Estatinas para Hiperlipidemia,Hiperlipidemia,Cardiovascular,2
+Tratamiento de Enfermedad Pulmonar Obstructiva Crónica,Enfermedad Pulmonar Obstructiva,Respiratoria,3
+Terapia con Insulina para Diabetes Tipo 1,Diabetes Tipo 1,Endocrina,4
+Tratamiento de Angina de Pecho,Angina de Pecho,Cardiovascular,3
+Terapia con Antiinflamatorios no Esteroideos,Inflamación,Musculoesquelética,1
+Tratamiento de Dislipidemia,Dislipidemia,Cardiovascular,1
+Tratamiento de Enfermedad de Parkinson,Enfermedad de Parkinson,Nerviosa,3
+Terapia con Broncodilatadores,Asma Respiratoria,Respiratoria,2
+Tratamiento de Colitis Ulcerosa,Colitis Ulcerosa,Digestiva,3
+Tratamiento de Infección por Helicobacter pylori,Infección por Helicobacter pylori,Digestiva,2
+Terapia Antitrombótica,Trombosis,Circulatoria,2
+Tratamiento de Cáncer de Colon,Cáncer de Colon,Oncológica,4
+Tratamiento de Esquizofrenia,Esquizofrenia,Nerviosa,3
+Tratamiento de Insomnio Crónico,Insomnio,Nerviosa,2
+Terapia de Rehidratación Oral,Deshidratación,Nutricional,1
+Tratamiento de Síndrome Metabólico,Síndrome Metabólico,Endocrina,2
+Tratamiento de Trombosis Venosa Profunda,Trombosis,Circulatoria,3
+Tratamiento de Neuralgia del Trigémino,Neuralgia,Nerviosa,3
+Terapia de Desensibilización para Alergias,Alergia,Alergológica,1
+Tratamiento de Síndrome de Tourette,Síndrome de Tourette,Nerviosa,2
+Tratamiento de Lupus Eritematoso Sistémico,Lupus Eritematoso Sistémico,Reumatológica,3
+Terapia con Bloqueadores de los Canales de Calcio,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Hipertensión Pulmonar,Hipertensión Pulmonar,Respiratoria,3
+Tratamiento de Enfermedad de Graves,Enfermedad de Graves,Endocrina,3
+Terapia de Férulas para Escoliosis,Escoliosis,Musculoesquelética,2
+Tratamiento de Osteoporosis,Osteoporosis,Musculoesquelética,2
+Tratamiento de Déficit de Atención e Hiperactividad,Déficit de Atención e Hiperactividad,Nerviosa,2
+Terapia Electroconvulsiva,Trastornos Psiquiátricos,Nerviosa,4
+Tratamiento de Enfermedad de Wilson,Enfermedad de Wilson,Metabólica,3
+Terapia con Bifosfonatos,Enfermedades Óseas,Musculoesquelética,2
+Tratamiento de Gota Crónica,Gota,Musculoesquelética,2
+Tratamiento de Fibrosis Quística,Fibrosis Quística,Respiratoria,4
+Tratamiento de Enfermedad de Huntington,Enfermedad de Huntington,Nerviosa,4
+Terapia con Inhibidores de la ECA,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Cirrosis Hepática,Cirrosis Hepática,Digestiva,4
+Terapia con Inhibidores de la Aromatasa,Cáncer de Mama,Oncológica,3
+Tratamiento de Síndrome de Fatiga Crónica,Síndrome de Fatiga Crónica,Nerviosa,2
+Terapia de Exposición Prolongada para TEPT,Trastorno de Estrés Postraumático,Psiquiátrica,3
+Tratamiento de Disfunción Eréctil,Disfunción Eréctil,Urológica,2
+Tratamiento de Cáncer de Próstata,Cáncer de Próstata,Oncológica,4
+Terapia de Resonancia Magnética Focalizada,Cáncer de Próstata,Oncológica,3
+Tratamiento de Glaucoma de Ángulo Abierto,Glaucoma,Oftalmológica,2
+Tratamiento de Insuficiencia Hepática,Insuficiencia Hepática,Digestiva,4
+Tratamiento de Enfermedad de Behçet,Enfermedad de Behçet,Reumatológica,3
+Terapia con Probioticos para Infección Intestinal,Infección Intestinal,Digestiva,1
+Tratamiento de Alergia al Polvo Doméstico,Alergia,Alergológica,1
+Tratamiento de Cáncer de Páncreas,Cáncer de Páncreas,Oncológica,4
+Terapia de Modulación del Microbioma,Enfermedades Digestivas,Digestiva,2
+Tratamiento de Neumonía Bacteriana,Neumonía,Respiratoria,3
+Tratamiento de Aterosclerosis,Aterosclerosis,Cardiovascular,3
+Terapia con Antidepresivos para Depresión Mayor,Depresión,Nerviosa,3
+Tratamiento de Hipogonadismo Masculino,Hipogonadismo,Endocrina,2
+Tratamiento de Cistitis Intersticial,Cistitis,Genitourinaria,2
+Terapia de Biofeedback,Trastornos Psicológicos,Psiquiátrica,1
+Tratamiento de Síndrome de Intestino Irritable,Síndrome de Intestino Irritable,Digestiva,2
+Tratamiento de Síndrome de Guillain-Barré,Síndrome de Guillain-Barré,Nerviosa,4
+Terapia con Antivirales para Herpes Zóster,Herpes Zóster,Infecciosa,2
+Tratamiento de Pancreatitis Crónica,Pancreatitis Crónica,Digestiva,3
+Tratamiento de Síndrome de Sjögren,Síndrome de Sjögren,Reumatológica,2
+Terapia Cognitivo-Conductual para Trastorno Obsesivo-Compulsivo,Trastorno Obsesivo-Compulsivo,Psiquiátrica,2
+Tratamiento de Polimialgia Reumática,Polimialgia Reumática,Reumatológica,2
+Tratamiento de Aneurisma Aórtico,Aneurisma Aórtico,Circulatoria,4
+Tratamiento de Inmunodeficiencia Primaria,Inmunodeficiencia Primaria,Inmunológica,3
+Terapia con Anticuerpos Monoclonales,Cáncer de varios tipos,Oncológica,3
+Tratamiento de EPOC Agudizada,Enfermedad Pulmonar Obstructiva Crónica,Respiratoria,4
+Tratamiento de Sarcoidosis,Sarcoidosis,Respiratoria,2
+Tratamiento de Endometriosis,Endometriosis,Ginecológica,3
+Tratamiento COVID-19 Agudo,COVID-19,Infecciosa,4
+Terapia de Reemplazo de Hormona del Crecimiento,Hipopituitarismo,Endocrina,2
+Tratamiento de Infecciones de Piel por Estafilococo,Infección Piel,Infecciosa,2
+Terapia con Antiepilépticos,Epilepsia,Nerviosa,3
+Tratamiento de Artritis Psoriásica,Artritis Psoriásica,Reumatológica,3
+Terapia de Modulación Inmune,Enfermedades Autoinmunes,Inmunológica,2
+Tratamiento de Cáncer de Mama Triple Negativo,Cáncer de Mama,Oncológica,4
+Terapia con Antihipertensivos,Hipertensión Arterial,Cardiovascular,2
+Tratamiento de Estenosis Aórtica,Estenosis Aórtica,Cardiovascular,3
+Terapia de Oxigenación Hiperbárica,Enfermedades Respiratorias,Respiratoria,2
+Tratamiento de Insuficiencia Suprarrenal,Insuficiencia Suprarrenal,Endocrina,3
+Tratamiento de Laringitis Crónica,Laringitis,Respiratoria,2
+Terapia de Reemplazo de Tejido Dañado,Lesiones,Musculoesquelética,2
+Tratamiento de Cardiomiopatía Dilatada,Cardiomiopatía,Cardiovascular,3
+Terapia con Inhibidores de PDE5,Disfunción Eréctil,Urológica,2
+Tratamiento de Hernia de Disco,Hernia de Disco,Musculoesquelética,2
+Terapia con Esteroides Anabólicos,Abuso de Esteroides,Endocrina,3
+Tratamiento de Miastenia Gravis,Miastenia Gravis,Nerviosa,3
+Terapia de Infusión Intravenosa,Deshidratación,Nutricional,2
+Tratamiento de Infección por Papilomavirus Humano,Infección por Papilomavirus Humano,Infecciosa,2
+Terapia con Inmunoglobulinas,Inmunodeficiencia,Inmunológica,3
+Tratamiento de Preeclampsia,Preeclampsia,Ginecológica,4
+Tratamiento de Trombocitopenia Idiopática,Trombocitopenia,hematológica,3
+Terapia de Movilización Pasiva Continua,Lesiones musculoesqueléticas,Musculoesquelética,1
+Tratamiento de Hiperplasia Prostática Benigna,Hiperplasia Prostática,Urológica,2
+Terapia con Inmunoterapia Dirigida,Cáncer,Oncológica,3
+Tratamiento de Embolia Pulmonar,Embolia Pulmonar,Respiratoria,4
+Tratamiento de Fractura de Cadera,Fractura de Cadera,Musculoesquelética,3
+Terapia con Corticoides Inhalados,Enfermedades Respiratorias,Respiratoria,2
+Tratamiento de Síndrome de Cushing,Síndrome de Cushing,Endocrina,3
+Terapia de Dialisis Peritoneal,Insuficiencia Renal,Renal,4
+Tratamiento de Varicela,Varicela,Infecciosa,2
+Terapia con Agentes Antifibrinolíticos,Trastornos Hemorrágicos,Hematológica,2
+Tratamiento de Fascitis Plantar,Fascitis Plantar,Musculoesquelética,2
+Tratamiento de Eccema Atópico,Eccema Atópico,Derma,2
+Terapia de Lisis de Cálculos Renales,Cálculos Renales,Renal,2
+Tratamiento de Degeneración Macular Asociada a la Edad,Degeneración Macular,Oftalmológica,3
+Terapia con Diuréticos,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Enfermedad de Kawasaki,Enfermedad de Kawasaki,Cardiovascular,3
+Terapia Antirretroviral Combinada,VIH/Inmunodeficiencia Adquirida,Inmunológica,3
+Tratamiento de Anemia de Células Falciformes,Anemia de Células Falciformes,Hematológica,3
+Tratamiento de Heridas Crónicas,Heridas Crónicas,Musculoesquelética,2
+Tratamiento de Hepatitis B,Hepatitis B,Digestiva,3
+Terapia con Bloqueadores Beta,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Enfermedad de Lyme,Enfermedad de Lyme,Infecciosa,3
+Tratamiento de Miocardiopatía Hipertrófica,Miocardiopatía Hipertrófica,Cardiovascular,3
+Terapia con Anticolinérgicos,Enfermedades Neurológicas,Nerviosa,2
+Tratamiento de Linfedema,Linfedema,Circulatoria,2
+Tratamiento de Angioedema Hereditario,Angioedema Hereditario,Inmunológica,3
+Terapia con Antioxidantes para Enfermedades Oculares,Enfermedades Oculares,Optométrica,2
+Tratamiento de Alopecia Areata,Alopecia Areata,Derma,2
+Terapia con Agentes Quelantes,Enfermedades Metabólicas,Endocrina,2
+Tratamiento de Degeneración del Disco Intervertebral,Degeneración del Disco Intervertebral,Musculoesquelética,3
+Tratamiento de Anemia Ferropénica,Anemia Ferropénica,Hematológica,2
+Tratamiento de Trastorno de Ansiedad Generalizada,Trastorno de Ansiedad,Nerviosa,2
+Tratamiento de Convulsiones Neonatales,Convulsiones Neonatales,Nerviosa,4
+Terapia con Trasplante de Células Madre,Enfermedades Hematológicas,Hematológica,4
+Tratamiento de Diverticulitis Aguda,Diverticulitis Aguda,Digestiva,3
+Terapia de Desintoxicación de Drogas,Adicción,Psiquiátrica,4
+Tratamiento de Encefalopatía Hepática,Encefalopatía Hepática,Digestiva,4
+Terapia con Agentes Antineoplásicos,Cáncer,Oncológica,4
+Tratamiento de Infección por Virus de Epstein-Barr,Infección por Epstein-Barr,Infecciosa,2
+Terapia con Inhibidores de la DPP-4,Diabetes Tipo 2,Endocrina,2
+Tratamiento de Hipertensión Intracraneal,Hipertensión Intracraneal,Neurológica,4
+Tratamiento de Mieloma Múltiple,Mieloma Múltiple,Oncológica,4
+Terapia con Inhibidores de la Tirosina Quinasa,Cáncer,Oncológica,3
+Tratamiento de Síndrome de Prader-Willi,Síndrome de Prader-Willi,Genética,3
+Tratamiento de Esclerodermia,Esclerodermia,Reumatológica,3
+Terapia con Fármacos Inmunomoduladores,Enfermedades Autoinmunes,Inmunológica,2
+Tratamiento de Gastroenteritis Aguda,Gastroenteritis Aguda,Digestiva,2
+Terapia de Plasmaféresis,Enfermedades Autoinmunes,Inmunológica,3
+Tratamiento de Espina Bífida,Espina Bífida,Nerviosa,4
+Tratamiento de Síndrome Antifosfolípido,Síndrome Antifosfolípido,Reumatológica,3
+Terapia con Terapia Fotodinámica,Cáncer,Oncológica,3
+Tratamiento de Síndrome de Stevens-Johnson,Síndrome de Stevens-Johnson,Derma,4
+Tratamiento de Síndrome del QT Largo,Síndrome del QT Largo,Cardiovascular,3
+Terapia con Agentes Vasodilatadores,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Disquinesia Tardía,Disquinesia Tardía,Nerviosa,3
+Tratamiento de Anemia Aplásica,Anemia Aplásica,Hematológica,4
+Tratamiento de Uveítis Anterior,Uveítis,Optométrica,2
+Terapia con Inhibidores de la PCSK9,Dislipidemia,Cardiovascular,2
+Tratamiento de Enfermedad de Paget Ósea,Enfermedad de Paget,Musculoesquelética,3
+Tratamiento de Acalasia,Acalasia,Digestiva,3
+Terapia de Hidratación Intravenosa,Deshidratación,Nutricional,2
+Tratamiento de Insuficiencia Mitral,Insuficiencia Mitral,Cardiovascular,3
+Terapia con Anticonvulsivantes para Neuralgia,Neuralgia,Nerviosa,2
+Tratamiento de Colangitis Esclerosante Primaria,Colangitis Esclerosante Primaria,Digestiva,3
+Tratamiento de Queratosis Actínica,Queratosis Actínica,Derma,1
+Terapia con Antagonistas de Receptores de Angiotensina II,Hipertensión Arterial,Cardiovascular,2
+Tratamiento de Absceso Cerebral,Absceso Cerebral,Neurológica,4
+Terapia con Terapia Ocupacional,Rehabilitación,Músculoesquelética,1
+Tratamiento de Melanoma Metastásico,Cáncer,Oncológica,4
+Terapia con Antagonistas de la Aldosterona,Enfermedades Cardiovasculares,Cardiovascular,2
+Tratamiento de Prolapso Rectal,Prolapso Rectal,Digestiva,2
