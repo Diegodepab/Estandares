@@ -1,0 +1,61 @@
+[
+  {
+    $unwind: "$historial",
+  },
+  {
+    $addFields:
+      {
+        edad_tratamiento: {
+          $dateDiff: {
+            startDate: {
+              $dateFromString: {
+                dateString: "$fecha_nacimiento",
+              },
+            },
+            endDate: {
+              $dateFromString: {
+                dateString: "$historial.fecha",
+              },
+            },
+            unit: "year",
+          },
+        },
+      },
+  },
+  {
+    $project:
+      {
+        tratamiento: "$historial.tratamientos",
+        edad: "$edad_tratamiento",
+      },
+  },
+  {
+    $group:
+      {
+        _id: "$tratamiento",
+        avgEdad: {
+          $avg: "$edad",
+        },
+      },
+  },
+  {
+    $lookup: {
+      from: "Tratamiento",
+      localField: "_id",
+      foreignField: "_id",
+      as: "tratamientoInfo", // Nombre del campo en el resultado que contendrá los datos del tratamiento
+    },
+  },
+  {
+    $unwind: "$tratamientoInfo",
+  },
+  {
+    $project:/
+      {
+        _id: 0,
+        tratamiento:
+          "$tratamientoInfo.nombre_tratamiento",
+        edad_media: "$avgEdad",
+      },
+  },
+]
