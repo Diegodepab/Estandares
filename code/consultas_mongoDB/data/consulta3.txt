@@ -63,7 +63,7 @@
           sintomas:
             "$tratamientoInfo.enfermedad.sintomas",
         },
-        edad_media: "$avgEdad",
+        edad_media: {$round: ["$avgEdad", 2]},
       },
   },
 ]
