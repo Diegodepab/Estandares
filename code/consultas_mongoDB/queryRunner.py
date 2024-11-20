@@ -1,15 +1,15 @@
-<<<<<<< HEAD
-=======
 #===================================================================================================================================
 # LIBRERIAS
 #===================================================================================================================================
 import subprocess
 import sys
->>>>>>> bfb260f599ca1e479c2322a888f64c49eedcb664
+import pymongo
+from lxml import etree  # Para trabajar con XSLT
 import json
 import argparse
 import os
 import xml.etree.ElementTree as ET
+
 
 def instalar_librerias(librerias):
     """
