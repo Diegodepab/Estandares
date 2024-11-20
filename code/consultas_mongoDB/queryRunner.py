@@ -4,14 +4,10 @@ import xml.etree.ElementTree as ET
 from lxml import etree  # Para trabajar con XSLT
 import argparse
 
-
 def leer_credenciales(archivo_credenciales):
-    """
-    Lee las credenciales de un archivo JSON y devuelve los detalles de conexión a MongoDB.
-    """
     with open(archivo_credenciales, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
+        credenciales = json.load(f)
+    return credenciales["uri"], credenciales["base_datos"], credenciales["coleccion"]
 
 def cargar_consulta(archivo_consulta):
     """
@@ -20,16 +16,21 @@ def cargar_consulta(archivo_consulta):
     with open(archivo_consulta, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-
 def ejecutar_consulta(mongo_client, base_datos, coleccion, consulta):
     """
-    Ejecuta una consulta en MongoDB y devuelve los documentos obtenidos.
+    Ejecuta una consulta en MongoDB (find o aggregate) y devuelve los documentos obtenidos.
     """
     db = mongo_client[base_datos]
     collection = db[coleccion]
-    resultados = collection.find(consulta)
-    return list(resultados)  # Convertimos el cursor en una lista
+    
+    if isinstance(consulta, list):  # Si es un pipeline (agregación)
+        resultados = collection.aggregate(consulta)
+    elif isinstance(consulta, dict):  # Si es una consulta de find
+        resultados = collection.find(consulta)
+    else:
+        raise ValueError("La consulta debe ser una lista (pipeline) o un diccionario (find).")
 
+    return list(resultados)
 
 def transformar_a_xml(documentos, root_name="root", item_name="item"):
     """
@@ -43,7 +44,6 @@ def transformar_a_xml(documentos, root_name="root", item_name="item"):
             child.text = str(value)
     return ET.tostring(root, encoding='utf-8')
 
-
 def aplicar_xslt(xml_data, xslt_file):
     """
     Aplica una plantilla XSLT a un documento XML y genera un HTML.
@@ -54,14 +54,12 @@ def aplicar_xslt(xml_data, xslt_file):
     new_dom = transform(dom)
     return str(new_dom)
 
-
 def guardar_salida(html_data, salida_html):
     """
     Guarda el documento HTML generado en un archivo.
     """
     with open(salida_html, 'w', encoding='utf-8') as f:
         f.write(html_data)
-
 
 def main():
     # Configurar argparse
@@ -75,21 +73,20 @@ def main():
 
     try:
         # Leer credenciales y conectarse a MongoDB
-        credenciales = leer_credenciales(args.credenciales)
-        client = pymongo.MongoClient(credenciales["uri"])
+        uri, base_datos, coleccion = leer_credenciales(args.credenciales)
+        client = pymongo.MongoClient(uri)
         print("Conexión a MongoDB exitosa.")
 
-        # Leer consulta desde el archivo
-        consulta_config = cargar_consulta(args.consulta)
-        base_datos = consulta_config["base_datos"]
-        coleccion = consulta_config["coleccion"]
-        consulta = consulta_config["consulta"]
+        # Leer consulta desde el archivo (puede ser un pipeline o una consulta simple)
+        consulta = cargar_consulta(args.consulta)
 
+        print(uri + "\n" + base_datos + "\n" + coleccion)
         # Ejecutar la consulta
         documentos = ejecutar_consulta(client, base_datos, coleccion, consulta)
         if not documentos:
             print("No se encontraron documentos para la consulta proporcionada.")
             return
+        print("Consulta realizada con éxito.")
 
         # Transformar resultados a XML
         xml_data = transformar_a_xml(documentos)
@@ -106,7 +103,6 @@ def main():
     finally:
         if 'client' in locals():
             client.close()
-
 
 if __name__ == "__main__":
     main()

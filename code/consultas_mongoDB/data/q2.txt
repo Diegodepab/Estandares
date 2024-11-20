@@ -1,0 +1,30 @@
+[
+    {
+        "$lookup": {
+            "from": "Tratamiento",
+            "localField": "historial.tratamientos",
+            "foreignField": "_id",
+            "as": "tratamiento"
+        }
+    },
+    {
+        "$match": {
+            "tratamiento.nombre_tratamiento": "Tratamiento de Diabetes Tipo 2",
+            "$expr": {
+                "$lte": [
+                    {"$dateFromString": {"dateString": "$fecha_nacimiento", "format": "%Y-%m-%d"}},
+                    {"$dateFromString": {"dateString": "1974-11-19", "format": "%Y-%m-%d"}}
+                ]
+            }
+        }
+    },
+    {
+        "$project": {
+            "dni": 1,
+            "fecha_nacimiento": 1,
+            "sexo": 1,
+            "etnia": 1,
+            "informacion_contacto": 1
+        }
+    }
+]
