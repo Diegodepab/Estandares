@@ -1,7 +1,37 @@
+<<<<<<< HEAD
+=======
+#===================================================================================================================================
+# LIBRERIAS
+#===================================================================================================================================
+import subprocess
+import sys
+>>>>>>> bfb260f599ca1e479c2322a888f64c49eedcb664
 import json
-import xml.etree.ElementTree as ET
-from lxml import etree  # Para trabajar con XSLT
 import argparse
+import os
+import xml.etree.ElementTree as ET
+
+def instalar_librerias(librerias):
+    """
+    Instala las librerías especificadas en la lista proporcionada.
+    """
+    for libreria in librerias:
+        try:
+            print(f"Instalando {libreria}...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", libreria])
+            print(f"{libreria} instalada correctamente.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error al instalar {libreria}: {e}")
+
+librerias_a_instalar = ['pymongo', 'lxml']  # Añadir las librerías que necesites
+instalar_librerias(librerias_a_instalar)
+
+import pymongo
+from lxml import etree  # Para trabajar con XSLT
+
+#===================================================================================================================================
+# FUNCIONES
+#===================================================================================================================================
 
 def leer_credenciales(archivo_credenciales):
     with open(archivo_credenciales, 'r', encoding='utf-8') as f:
@@ -75,9 +105,43 @@ def aplicar_xslt(xml_data, xslt_file):
 def guardar_salida(html_data, salida_html):
     """
     Guarda el documento HTML generado en un archivo.
+    Si la carpeta 'resultados' no existe, la crea.
+    Incluye una referencia a un archivo CSS llamado 'style.css'.
     """
-    with open(salida_html, 'w', encoding='utf-8') as f:
+    # Crear la carpeta 'resultados' si no existe
+    os.makedirs("resultados", exist_ok=True)
+
+    # Insertar el enlace al archivo CSS en el HTML
+    css_link = '<link rel="stylesheet" type="text/css" href="../data/styles.css">'
+    if "<head>" in html_data:
+        html_data = html_data.replace("<head>", f"<head>\n    {css_link}")
+    else:
+        # Si no hay <head>, insertar el CSS al inicio del archivo
+        html_data = f"{css_link}\n{html_data}"
+
+    # Guardar el archivo en la carpeta
+    with open(f"resultados/{salida_html}", 'w', encoding='utf-8') as f:
         f.write(html_data)
+
+def guardar_xml(xml_data, archivo_xml):
+    """
+    Guarda el documento XML generado en un archivo.
+    Si la variable xml_data es de tipo bytes, la convierte a str.
+    """
+    # Asegurarse de que xml_data sea una cadena de texto
+    if isinstance(xml_data, bytes):
+        xml_data = xml_data.decode('utf-8')
+    
+    # Crear la carpeta 'resultados' si no existe
+    os.makedirs("resultados", exist_ok=True)
+
+    # Guardar el archivo XML
+    with open(f"resultados/{archivo_xml}", 'w', encoding='utf-8') as f:
+        f.write(xml_data)
+
+#===================================================================================================================================
+# MAIN
+#===================================================================================================================================
 
 def main():
     # Configurar argparse
@@ -97,8 +161,6 @@ def main():
 
         # Leer consulta desde el archivo (puede ser un pipeline o una consulta simple)
         consulta = cargar_consulta(args.consulta)
-
-        print(uri + "\n" + base_datos + "\n" + coleccion)
         # Ejecutar la consulta
         documentos = ejecutar_consulta(client, base_datos, coleccion, consulta)
         if not documentos:
@@ -108,6 +170,7 @@ def main():
 
         # Transformar resultados a XML
         xml_data = transformar_a_xml(documentos)
+        #guardar_xml(xml_data, 'resultado.xml')
 
         # Aplicar plantilla XSLT
         html_data = aplicar_xslt(xml_data, args.xslt)
