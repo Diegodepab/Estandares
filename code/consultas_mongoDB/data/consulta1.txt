@@ -1,92 +1,80 @@
 [
   {
-    $unwind: "$historial",
+    "$unwind": "$historial"
   },
   {
-    $group:
+    "$group":
       {
-        _id: {
-          hospital: "$historial.hospital",
-          tratamiento: "$historial.tratamientos",
+        "_id": {
+          "hospital": "$historial.hospital",
+          "tratamiento": "$historial.tratamientos"
         },
-        count: {
-          $sum: 1,
-        },
-      },
+        "count": {
+          "$sum": 1
+        }
+      }
   },
   {
-    $match:
+    "$match":
       {
-        count: {
-          $gt: 1,
-        },
-      },
+        "count": {
+          "$gt": 1
+        }
+      }
   },
   {
-    $lookup: {
-      from: "Tratamiento",
-      localField: "_id.tratamiento",
-      foreignField: "_id",
-      as: "result",
-    },
+    "$lookup": {
+      "from": "Tratamiento",
+      "localField": "_id.tratamiento",
+      "foreignField": "_id",
+      "as": "result"
+    }
   },
   {
-    $project: {
-      hospital: "$_id.hospital",
-      tratamiento: {
-        $arrayElemAt: [
+    "$project": {
+      "hospital": "$_id.hospital",
+      "tratamiento": {
+        "$arrayElemAt": [
           "$result.nombre_tratamiento",
-          0,
-        ],
+          0
+        ]
       },
-      count: "$count",
-      _id: 0,
-    },
+      "count": "$count",
+      "_id": 0
+    }
   },
   {
-    $group:
-      /**
-       * _id: The id of the group.
-       * fieldN: The first field name.
-       */
+    "$group":
       {
-        _id: "$hospital",
-        tratamientos: {
-          $push: {
-            tratamiento: "$tratamiento",
-            num_aplicado: "$count",
-          },
-        },
-      },
+        "_id": "$hospital",
+        "tratamientos": {
+          "$push": {
+            "tratamiento": "$tratamiento",
+            "num_aplicado": "$count"
+          }
+        }
+      }
   },
   {
-    $lookup:
-      /**
-       * from: The target collection.
-       * localField: The local join field.
-       * foreignField: The target join field.
-       * as: The name for the results.
-       * pipeline: Optional pipeline to run on the foreign collection.
-       * let: Optional variables to use in the pipeline field stages.
-       */
+    "$lookup":
       {
-        from: "Hospital",
-        localField: "_id",
-        foreignField: "_id",
-        as: "nombre_hospital",
-      },
+        "from": "Hospital",
+        "localField": "_id",
+        "foreignField": "_id",
+        "as": "nombre_hospital"
+      }
   },
   {
-    $project:
+    "$project":
       {
-        hospital: {
-          $arrayElemAt: [
+        "hospital": {
+          "$arrayElemAt": [
             "$nombre_hospital.nombre_hospital",
-            0,
-          ],
+            0
+          ]
         },
-        tratamientos: "$tratamientos",
-        _id: 0,
-      },
+        "tratamientos": "$tratamientos",
+        "_id": 0
+      }
   }
 ]
