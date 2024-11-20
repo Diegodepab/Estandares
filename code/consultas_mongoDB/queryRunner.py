@@ -1,4 +1,3 @@
-import pymongo
 import json
 import xml.etree.ElementTree as ET
 from lxml import etree  # Para trabajar con XSLT
@@ -34,14 +33,33 @@ def ejecutar_consulta(mongo_client, base_datos, coleccion, consulta):
 
 def transformar_a_xml(documentos, root_name="root", item_name="item"):
     """
-    Transforma una lista de documentos JSON a un formato XML.
+    Transforma una lista de documentos JSON a un formato XML,
+    respetando estructuras anidadas.
     """
+    def agregar_elementos(parent, key, value):
+        """
+        Agrega elementos al XML respetando tipos de datos complejos.
+        """
+        if isinstance(value, dict):
+            # Crear un subelemento para los diccionarios
+            sub_element = ET.SubElement(parent, key)
+            for sub_key, sub_value in value.items():
+                agregar_elementos(sub_element, sub_key, sub_value)
+        elif isinstance(value, list):
+            # Crear un subelemento para cada elemento de la lista
+            list_parent = ET.SubElement(parent, key)
+            for item in value:
+                agregar_elementos(list_parent, "item", item)
+        else:
+            # Agregar texto para valores simples
+            ET.SubElement(parent, key).text = str(value)
+
     root = ET.Element(root_name)
     for doc in documentos:
         item = ET.SubElement(root, item_name)
         for key, value in doc.items():
-            child = ET.SubElement(item, key)
-            child.text = str(value)
+            agregar_elementos(item, key, value)
+
     return ET.tostring(root, encoding='utf-8')
 
 def aplicar_xslt(xml_data, xslt_file):
