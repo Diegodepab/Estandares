@@ -50,11 +50,19 @@
     $unwind: "$tratamientoInfo",
   },
   {
-    $project:/
+    $project:
       {
         _id: 0,
         tratamiento:
           "$tratamientoInfo.nombre_tratamiento",
+        descripcion:
+          "$tratamientoInfo.descripcion",
+        enfermedad: {
+          nombre:
+            "$tratamientoInfo.enfermedad.nombre",
+          sintomas:
+            "$tratamientoInfo.enfermedad.sintomas",
+        },
         edad_media: "$avgEdad",
       },
   },
