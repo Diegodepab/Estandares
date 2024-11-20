@@ -6,8 +6,6 @@
         <link rel="stylesheet" type="text/css" href="styles.css" />
       </head>
       <body>
-        <!-- Vinculamos el archivo JS -->
-        <script src="script.js"></script>
         <h2>Resultados de Tratamiento de Diabetes Tipo 2 en mayores de 50</h2>
         <table>
           <tr>
@@ -20,7 +18,7 @@
             <th>Correo</th>
             <th>Dirección</th>
           </tr>
-          <xsl:for-each select="Resultados/Persona">
+          <xsl:for-each select="root/item">
             <tr>
               <td><xsl:value-of select="dni"/></td>
               <td><xsl:value-of select="fecha_nacimiento"/></td>
