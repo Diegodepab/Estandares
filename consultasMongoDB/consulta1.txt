@@ -1,0 +1,72 @@
+[
+  {
+    $unwind: "$historial",
+  },
+  {
+    $group:
+      {
+        _id: {
+          hospital: "$historial.hospital",
+          tratamiento: "$historial.tratamientos",
+        },
+        count: {
+          $sum: 1,
+        },
+      },
+  },
+  {
+    $lookup: {
+      from: "Tratamiento",
+      localField: "_id.tratamiento",
+      foreignField: "_id",
+      as: "result",
+    },
+  },
+  {
+    $project: {
+      hospital: "$_id.hospital",
+      tratamiento: {
+        $arrayElemAt: [
+          "$result.nombre_tratamiento",
+          0,
+        ],
+      },
+      count: "$count",
+      _id: 0,
+    },
+  },
+  {
+    $group:
+      {
+        _id: "$hospital",
+        tratamientos: {
+          $push: {
+            tratamiento: "$tratamiento",
+            num_aplicado: "$count",
+          },
+        },
+      },
+  },
+  {
+    $lookup:
+      {
+        from: "Hospital",
+        localField: "_id",
+        foreignField: "_id",
+        as: "nombre_hospital",
+      },
+  },
+  {
+    $project:
+      {
+        hospital: {
+          $arrayElemAt: [
+            "$nombre_hospital.nombre_hospital",
+            0,
+          ],
+        },
+        tratamientos: "$tratamientos",
+        _id: 0,
+      },
+  }
+]
