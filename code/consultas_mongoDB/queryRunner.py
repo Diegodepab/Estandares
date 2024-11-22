@@ -3,8 +3,6 @@
 #===================================================================================================================================
 import subprocess
 import sys
-import pymongo
-from lxml import etree  # Para trabajar con XSLT
 import json
 import argparse
 import os
@@ -23,11 +21,12 @@ def instalar_librerias(librerias):
         except subprocess.CalledProcessError as e:
             print(f"Error al instalar {libreria}: {e}")
 
-librerias_a_instalar = ['pymongo', 'lxml']  # Añadir las librerías que necesites
+librerias_a_instalar = ['pymongo', 'lxml','python-dotenv']  # Añadir las librerías que necesites
 instalar_librerias(librerias_a_instalar)
 
 import pymongo
 from lxml import etree  # Para trabajar con XSLT
+from dotenv import load_dotenv
 
 #===================================================================================================================================
 # FUNCIONES
@@ -146,7 +145,6 @@ def guardar_xml(xml_data, archivo_xml):
 def main():
     # Configurar argparse
     parser = argparse.ArgumentParser(description="Transforma consultas de MongoDB a HTML usando XSLT.")
-    parser.add_argument("--credenciales", required=True, help="Archivo JSON con credenciales de MongoDB.")
     parser.add_argument("--consulta", required=True, help="Archivo TXT con la consulta en formato JSON.")
     parser.add_argument("--xslt", required=True, help="Archivo XSLT para transformar el resultado a HTML.")
     parser.add_argument("--salida", required=True, help="Archivo HTML de salida.")
@@ -154,8 +152,11 @@ def main():
     args = parser.parse_args()
 
     try:
+        load_dotenv()  # Cargar las variables de entorno del archivo .env
+        uri = os.getenv("MONGO_URI")
+        base_datos = os.getenv("BASE_DE_DATOS")
+        coleccion = os.getenv("COLECCION")
         # Leer credenciales y conectarse a MongoDB
-        uri, base_datos, coleccion = leer_credenciales(args.credenciales)
         client = pymongo.MongoClient(uri)
         print("Conexión a MongoDB exitosa.")
 
