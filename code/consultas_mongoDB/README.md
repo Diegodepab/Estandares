@@ -13,8 +13,10 @@ Información general de los tratamientos y la edad media de los pacientes que lo
 
 ## Ejecución
 
-<code> python3 queryRunner.py  --consulta *fichero_consulta* --xslt *fichero_xslt* --salida *nombre_salida* <code>
-
+```bash
+ python3 queryRunner.py  --consulta *fichero_consulta* --xslt *fichero_xslt* --salida *nombre_salida* <code>
+```
 Ejemplo:
+```bash
 <code> python3 queryRunner.py  --consulta ./data/consulta1.txt --xslt ./data/consulta1.xslt --salida consulta1.html <code>
-
+```
