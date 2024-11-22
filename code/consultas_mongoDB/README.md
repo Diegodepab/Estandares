@@ -1,0 +1,2 @@
+Aqui se compilaría con python3 queryRunner.py --credenciales ./data/credenciales.json --consulta ./data/consulta1.txt --xslt ./data/consulta2.xslt --salida resultado_consulta2.html 
+o con otro comando?
