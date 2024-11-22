@@ -8,6 +8,7 @@ Información de los pacientes  mayores de 50 que han recibido un tratamiento de 
 
 #### Consulta 3
 Información general de los tratamientos y la edad media de los pacientes que lo han recibido.
+<<<<<<< HEAD
 
 ---
 
@@ -17,3 +18,5 @@ Información general de los tratamientos y la edad media de los pacientes que lo
 
 Ejemplo:
 <code> python3 queryRunner.py  --consulta ./data/consulta1.txt --xslt ./data/consulta1.xslt --salida consulta1.html <code>
+=======
+>>>>>>> 798c4c8d8c5f0985725b3bfbc385f015d3dd95bc
