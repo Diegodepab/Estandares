@@ -1,0 +1,6 @@
+Mínima (0)
+Leve (1)
+Moderada (2)
+Severa (3)
+Crítica (4)
+EMERGENCIA (5)

@@ -1,0 +1,44 @@
+Hidroxicloroquina
+Insulina
+Rifampicina
+Amiodarona
+Warfarina
+Metformina
+Fenitoína
+AINEs
+Ciclosporina
+Benzodiacepinas
+Sildenafil
+Carbonato de calcio
+Estatinas
+Tamsulosina
+Digoxina
+Levotiroxina
+Propiltiouracilo
+Suplementos de calcio
+Corticosteroides
+Remdesivir
+Lopinavir
+Carbamazepina
+Penicilina
+Espironolactona
+Clopidogrel
+Beta-bloqueadores
+Antidepresivos
+Antipsicóticos
+Inmunoglobulinas
+Biológicos
+Antiinflamatorios no esteroides
+Heparina
+Clonidina
+Verapamilo
+Ácido acetilsalicílico
+Ranitidina
+Losartan
+Metoprolol
+Fluconazol
+Diazepam
+Enalapril
+Ciprofloxacino
+Loratadina
+Atorvastatina
