@@ -7,22 +7,21 @@
       </head>
       <body>
         <h2>Lista de Tratamientos por Hospital</h2>
+        <xsl:for-each select="root/item">
+          <h3><xsl:value-of select="hospital"/></h3>
         <table border="1">
           <tr>
-            <th>Hospital</th>
             <th>Tratamiento</th>
             <th>Número de Aplicaciones</th>
           </tr>
-          <xsl:for-each select="tratamientos/tratamiento">
-            <tr>
-              <td rowspan="{count(tratamientos/item)}"><xsl:value-of select="hospital"/></td>
               <xsl:for-each select="tratamientos/item">
+              <tr>
                 <td><xsl:value-of select="tratamiento"/></td>
                 <td><xsl:value-of select="num_aplicado"/></td>
+              </tr>
               </xsl:for-each>
-            </tr>
-          </xsl:for-each>
-        </table>
+          </table>
+        </xsl:for-each>
       </body>
     </html>
   </xsl:template>
