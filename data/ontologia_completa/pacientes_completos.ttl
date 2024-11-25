@@ -1,0 +1,203 @@
+@prefix ex: <http://example.org/paciente#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:6738f48b7919dc6a76aab155 a ex:Paciente ;
+    ex:tieneHistorial ex:Historial_6738f48b7919dc6a76aab155_0,
+        ex:Historial_6738f48b7919dc6a76aab155_1,
+        ex:Historial_6738f48b7919dc6a76aab155_2,
+        ex:Historial_6738f48b7919dc6a76aab155_3,
+        ex:Historial_6738f48b7919dc6a76aab155_4 ;
+    schema1:address ex:Direccion_6738f48b7919dc6a76aab155 ;
+    schema1:birthDate "2016-11-27" ;
+    schema1:gender "femenino" ;
+    foaf:familyName "Ortiz" ;
+    foaf:givenName "Martina" .
+
+ex:6738f48b7919dc6a76aab156 a ex:Paciente ;
+    ex:tieneHistorial ex:Historial_6738f48b7919dc6a76aab156_0,
+        ex:Historial_6738f48b7919dc6a76aab156_1,
+        ex:Historial_6738f48b7919dc6a76aab156_2 ;
+    schema1:address ex:Direccion_6738f48b7919dc6a76aab156 ;
+    schema1:birthDate "1965-11-30" ;
+    schema1:gender "femenino" ;
+    foaf:familyName "Casanova" ;
+    foaf:givenName "Elisa" .
+
+ex:6738f48b7919dc6a76aab157 a ex:Paciente ;
+    ex:tieneHistorial ex:Historial_6738f48b7919dc6a76aab157_0,
+        ex:Historial_6738f48b7919dc6a76aab157_1,
+        ex:Historial_6738f48b7919dc6a76aab157_2,
+        ex:Historial_6738f48b7919dc6a76aab157_3,
+        ex:Historial_6738f48b7919dc6a76aab157_4 ;
+    schema1:address ex:Direccion_6738f48b7919dc6a76aab157 ;
+    schema1:birthDate "1934-07-17" ;
+    schema1:gender "masculino" ;
+    foaf:familyName "Gálvez" ;
+    foaf:givenName "Silvano" .
+
+ex:6738f48b7919dc6a76aab158 a ex:Paciente ;
+    ex:tieneHistorial ex:Historial_6738f48b7919dc6a76aab158_0,
+        ex:Historial_6738f48b7919dc6a76aab158_1,
+        ex:Historial_6738f48b7919dc6a76aab158_2,
+        ex:Historial_6738f48b7919dc6a76aab158_3 ;
+    schema1:address ex:Direccion_6738f48b7919dc6a76aab158 ;
+    schema1:birthDate "2018-12-21" ;
+    schema1:gender "masculino" ;
+    foaf:familyName "Ibáñez" ;
+    foaf:givenName "Horacio" .
+
+ex:6738f48b7919dc6a76aab159 a ex:Paciente ;
+    ex:tieneHistorial ex:Historial_6738f48b7919dc6a76aab159_0,
+        ex:Historial_6738f48b7919dc6a76aab159_1,
+        ex:Historial_6738f48b7919dc6a76aab159_2,
+        ex:Historial_6738f48b7919dc6a76aab159_3,
+        ex:Historial_6738f48b7919dc6a76aab159_4 ;
+    schema1:address ex:Direccion_6738f48b7919dc6a76aab159 ;
+    schema1:birthDate "1932-07-08" ;
+    schema1:gender "masculino" ;
+    foaf:familyName "Fajardo" ;
+    foaf:givenName "Ildefonso" .
+
+ex:tieneHistorial a owl:ObjectProperty ;
+    rdfs:domain ex:Paciente ;
+    rdfs:range ex:HistorialMedico .
+
+schema1:addressCountry a owl:DatatypeProperty ;
+    rdfs:domain schema1:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema1:addressLocality a owl:DatatypeProperty ;
+    rdfs:domain schema1:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema1:birthDate a owl:DatatypeProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:date .
+
+schema1:streetAddress a owl:DatatypeProperty ;
+    rdfs:domain schema1:PostalAddress ;
+    rdfs:range xsd:string .
+
+ex:Direccion_6738f48b7919dc6a76aab155 a schema1:PostalAddress ;
+    schema1:addressCountry "España" ;
+    schema1:addressLocality "Barcelona" ;
+    schema1:streetAddress "Calle Nueva 6" .
+
+ex:Direccion_6738f48b7919dc6a76aab156 a schema1:PostalAddress ;
+    schema1:addressCountry "España" ;
+    schema1:addressLocality "Sevilla" ;
+    schema1:streetAddress "Calle Central 24" .
+
+ex:Direccion_6738f48b7919dc6a76aab157 a schema1:PostalAddress ;
+    schema1:addressCountry "España" ;
+    schema1:addressLocality "Valencia" ;
+    schema1:streetAddress "Calle Mayor 87" .
+
+ex:Direccion_6738f48b7919dc6a76aab158 a schema1:PostalAddress ;
+    schema1:addressCountry "España" ;
+    schema1:addressLocality "Bilbao" ;
+    schema1:streetAddress "Calle Mayor 18" .
+
+ex:Direccion_6738f48b7919dc6a76aab159 a schema1:PostalAddress ;
+    schema1:addressCountry "España" ;
+    schema1:addressLocality "Sevilla" ;
+    schema1:streetAddress "Calle Mayor 5" .
+
+ex:Historial_6738f48b7919dc6a76aab155_0 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b21218626b6> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da05110> .
+
+ex:Historial_6738f48b7919dc6a76aab155_1 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186241d> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da0512c> .
+
+ex:Historial_6738f48b7919dc6a76aab155_2 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862947> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da050ee> .
+
+ex:Historial_6738f48b7919dc6a76aab155_3 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862947> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da05107> .
+
+ex:Historial_6738f48b7919dc6a76aab155_4 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186252f> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05141> .
+
+ex:Historial_6738f48b7919dc6a76aab156_0 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862310> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da050fe> .
+
+ex:Historial_6738f48b7919dc6a76aab156_1 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862a27> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da0517a> .
+
+ex:Historial_6738f48b7919dc6a76aab156_2 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186248d> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05136> .
+
+ex:Historial_6738f48b7919dc6a76aab157_0 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b21218623e9> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05147> .
+
+ex:Historial_6738f48b7919dc6a76aab157_1 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862d2a> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05182> .
+
+ex:Historial_6738f48b7919dc6a76aab157_2 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862310> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da05123> .
+
+ex:Historial_6738f48b7919dc6a76aab157_3 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862947> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da05103> .
+
+ex:Historial_6738f48b7919dc6a76aab157_4 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186264a> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da050fb> .
+
+ex:Historial_6738f48b7919dc6a76aab158_0 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b21218627f9> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05148> .
+
+ex:Historial_6738f48b7919dc6a76aab158_1 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862ba0> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05176> .
+
+ex:Historial_6738f48b7919dc6a76aab158_2 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b21218623e9> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da05125> .
+
+ex:Historial_6738f48b7919dc6a76aab158_3 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862453> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da05170> .
+
+ex:Historial_6738f48b7919dc6a76aab159_0 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b21218624c0> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da0513a> .
+
+ex:Historial_6738f48b7919dc6a76aab159_1 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186241d> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da050da> .
+
+ex:Historial_6738f48b7919dc6a76aab159_2 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862343> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da0511e> .
+
+ex:Historial_6738f48b7919dc6a76aab159_3 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b212186248d> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abd5922963a1da050da> .
+
+ex:Historial_6738f48b7919dc6a76aab159_4 a ex:HistorialMedico ;
+    ex:hospital <http://example.org/hospital#67328cb647c74b2121862453> ;
+    ex:tratamientos <http://example.org/tratamiento#67373abe5922963a1da0515b> .
+
+ex:Paciente a owl:Class .
+
+schema1:PostalAddress a owl:Class .
+
+ex:HistorialMedico a owl:Class .
+

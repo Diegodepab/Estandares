@@ -1,0 +1,33 @@
+@prefix ex: <http://example.org/paciente#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Clases
+ex:Paciente a owl:Class .
+ex:HistorialMedico a owl:Class .
+schema:PostalAddress a owl:Class .
+
+# Propiedades
+ex:tieneHistorial a owl:ObjectProperty ;
+    rdfs:domain ex:Paciente ;
+    rdfs:range ex:HistorialMedico .
+
+schema:streetAddress a owl:DatatypeProperty ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:addressLocality a owl:DatatypeProperty ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:addressCountry a owl:DatatypeProperty ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string .
+
+schema:birthDate a owl:DatatypeProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:date .
