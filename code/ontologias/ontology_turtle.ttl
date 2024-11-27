@@ -1,0 +1,437 @@
+@prefix : <http://www.semanticweb.org/alex/ontologies/2024/10/untitled-ontology-14/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/alex/ontologies/2024/10/untitled-ontology-14/> .
+
+<http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_contiene_medicos
+:departamento_contiene_medicos rdf:type owl:ObjectProperty ;
+                               owl:inverseOf :medico_es_contenido_por_departamento ;
+                               rdfs:domain :Departamento ;
+                               rdfs:range :Medico .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_es_contenido_por_hospital
+:departamento_es_contenido_por_hospital rdf:type owl:ObjectProperty ;
+                                        owl:inverseOf :hospital_contiene_departamento ;
+                                        rdfs:domain :Departamento ;
+                                        rdfs:range :Hospital .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_hecho_en_hospital
+:historial_hecho_en_hospital rdf:type owl:ObjectProperty ;
+                             owl:inverseOf :hospital_tiene_historial ;
+                             rdfs:domain :Historial ;
+                             rdfs:range :Hospital .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_pertenece_a_paciente
+:historial_pertenece_a_paciente rdf:type owl:ObjectProperty ;
+                                owl:inverseOf :paciente_tiene_historial ;
+                                rdfs:domain :Historial ;
+                                rdfs:range :Paciente .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_tiene_tratamiento
+:historial_tiene_tratamiento rdf:type owl:ObjectProperty ;
+                             owl:inverseOf :tratamiento_pertenece_a_historial ;
+                             rdfs:domain :Historial ;
+                             rdfs:range :Tratamiento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_contiene_departamento
+:hospital_contiene_departamento rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Hospital ;
+                                rdfs:range :Departamento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_historial
+:hospital_tiene_historial rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Hospital ;
+                          rdfs:range :Historial .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_tratamiento
+:hospital_tiene_tratamiento rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :tratamiento_hecho_en_hospital ;
+                            rdfs:domain :Hospital ;
+                            rdfs:range :Tratamiento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_se_administra_en_tratamiento
+:medicamento_se_administra_en_tratamiento rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf :tratamiento_es_administrado_medicamento ;
+                                          rdfs:domain :Medicamento ;
+                                          rdfs:range :Tratamiento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_es_contenido_por_departamento
+:medico_es_contenido_por_departamento rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :Medico ;
+                                      rdfs:range :Departamento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_tiene_historial
+:paciente_tiene_historial rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Paciente ;
+                          rdfs:range :Historial .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_necesita_ser_monitoreado_por_tratamiento
+:parametro_necesita_ser_monitoreado_por_tratamiento rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf :tratamiento_necesita_monitorear_parametro_de_monitorizacion ;
+                                                    rdfs:domain :Parametro_Monitorizacion ;
+                                                    rdfs:range :Tratamiento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_es_administrado_medicamento
+:tratamiento_es_administrado_medicamento rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :Tratamiento ;
+                                         rdfs:range :Medicamento .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_hecho_en_hospital
+:tratamiento_hecho_en_hospital rdf:type owl:ObjectProperty ;
+                               rdfs:domain :Tratamiento ;
+                               rdfs:range :Hospital .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_necesita_monitorear_parametro_de_monitorizacion
+:tratamiento_necesita_monitorear_parametro_de_monitorizacion rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain :Tratamiento ;
+                                                             rdfs:range :Parametro_Monitorizacion .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_pertenece_a_historial
+:tratamiento_pertenece_a_historial rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :Tratamiento ;
+                                   rdfs:range :Historial .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_extension
+:departamento_extension rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Departamento ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_nombre
+:departamento_nombre rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Departamento ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_servicio
+:departamento_servicio rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Departamento ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_categoria
+:enfermedad_categoria rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Tratamiento ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_nombre
+:enfermedad_nombre rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Tratamiento ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_severida
+:enfermedad_severida rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Tratamiento ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_sintoma
+:enfermedad_sintoma rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Tratamiento ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_fecha
+:historial_fecha rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Historial ;
+                 rdfs:range xsd:date .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_calle
+:hospital_calle rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Hospital ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_ciudad
+:hospital_ciudad rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Hospital ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_codigo_postal
+:hospital_codigo_postal rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Hospital ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_email
+:hospital_email rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Hospital ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_nombre
+:hospital_nombre rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Hospital ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_pais
+:hospital_pais rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Hospital ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_telefono
+:hospital_telefono rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Hospital ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_efecto_secundario
+:medicamento_efecto_secundario rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Medicamento ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_nombre
+:medicamento_nombre rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Medicamento ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamiento_frecuencia
+:medicamiento_frecuencia rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Medicamento ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_anos_experiencia
+:medico_anos_experiencia rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Medico ;
+                         rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_dia_laboral
+:medico_dia_laboral rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Medico ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_especialidad
+:medico_especialidad rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Medico ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_horas
+:medico_horas rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Medico ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_nombre
+:medico_nombre rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Medico ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_apellido
+:paciente_apellido rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Paciente ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_calle
+:paciente_calle rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Paciente ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_ciudad
+:paciente_ciudad rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Paciente ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_codigo_postal
+:paciente_codigo_postal rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Paciente ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_correo
+:paciente_correo rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Paciente ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_dni
+:paciente_dni rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Paciente ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_etnia
+:paciente_etnia rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Paciente ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_fecha_nacimiento
+:paciente_fecha_nacimiento rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Paciente ;
+                           rdfs:range xsd:date .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_id
+:paciente_id rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Paciente ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nombre
+:paciente_nombre rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Paciente ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nss
+:paciente_nss rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Paciente ;
+              rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_pais
+:paciente_pais rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Paciente ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_sexo
+:paciente_sexo rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Paciente ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_telefono
+:paciente_telefono rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Paciente ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_nombre
+:parametro_nombre rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Parametro_Monitorizacion ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_referencia
+:parametro_referencia rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Parametro_Monitorizacion ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_unidad
+:parametro_unidad rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Parametro_Monitorizacion ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_dias_duracion
+:tratamiento_dias_duracion rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Tratamiento ;
+                           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_frecuencia_dosis
+:tratamiento_frecuencia_dosis rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Tratamiento ;
+                              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_id
+:tratamiento_id rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Tratamiento ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_nombre
+:tratamiento_nombre rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Tratamiento ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_via_administracion
+:tratamiento_via_administracion rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Tratamiento ;
+                                rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento
+:Departamento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial
+:Historial rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital
+:Hospital rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento
+:Medicamento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico
+:Medico rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente
+:Paciente rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion
+:Parametro_Monitorizacion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento
+:Tratamiento rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
