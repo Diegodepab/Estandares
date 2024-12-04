@@ -2,7 +2,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD
 import json
 
-def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_path_tratamientos, salida_path, max_items=None):
+def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_path_tratamientos, salida_path, max_items=-1):
     """
     Rellena una ontología con datos de un JSON de pacientes, hospitales y tratamientos.
     
@@ -23,14 +23,14 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
     #################################################################
 
     # Definir las clases utilizando el namespace base
-    DEPARTAMENTO = BASE.Departamento
-    HISTORIAL = BASE.Historial
+    DEPARTAMENTO = BASE.Departamento 
+    HISTORIAL = BASE.Historial # Pacientes
     HOSPITAL = BASE.Hospital
-    MEDICAMENTO = BASE.Medicamento
+    MEDICAMENTO = BASE.Medicamento # Tratamientos
     MEDICO = BASE.Medico
-    PACIENTE = BASE.Paciente
-    PARAMETRO_MONITORIZACION = BASE.Parametro_Monitorizacion
-    TRATAMIENTO = BASE.Tratamiento
+    PACIENTE = BASE.Paciente # Pacientes
+    PARAMETRO_MONITORIZACION = BASE.Parametro_Monitorizacion # Tratamientos
+    TRATAMIENTO = BASE.Tratamiento # Tratamientos
 
 
     # Añadir las clases al grafo
@@ -49,22 +49,22 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
 
     # Definir propiedades de objeto
     properties = [
-        ("departamento_contiene_medicos", BASE.departamento_contiene_medicos, BASE.Departamento, BASE.Medico, BASE.medico_es_contenido_por_departamento),
-        ("departamento_es_contenido_por_hospital", BASE.departamento_es_contenido_por_hospital, BASE.Departamento, BASE.Hospital, BASE.hospital_contiene_departamento),
-        ("historial_hecho_en_hospital", BASE.historial_hecho_en_hospital, BASE.Historial, BASE.Hospital, BASE.hospital_tiene_historial),
-        ("historial_pertenece_a_paciente", BASE.historial_pertenece_a_paciente, BASE.Historial, BASE.Paciente, BASE.paciente_tiene_historial),
-        ("historial_tiene_tratamiento", BASE.historial_tiene_tratamiento, BASE.Historial, BASE.Tratamiento, BASE.tratamiento_pertenece_a_historial),
-        ("hospital_contiene_departamento", BASE.hospital_contiene_departamento, BASE.Hospital, BASE.Departamento, None),
-        ("hospital_tiene_historial", BASE.hospital_tiene_historial, BASE.Hospital, BASE.Historial, None),
-        ("hospital_tiene_tratamiento", BASE.hospital_tiene_tratamiento, BASE.Hospital, BASE.Tratamiento, BASE.tratamiento_hecho_en_hospital),
-        ("medicamento_se_administra_en_tratamiento", BASE.medicamento_se_administra_en_tratamiento, BASE.Medicamento, BASE.Tratamiento, BASE.tratamiento_es_administrado_medicamento),
-        ("medico_es_contenido_por_departamento", BASE.medico_es_contenido_por_departamento, BASE.Medico, BASE.Departamento, None),
-        ("paciente_tiene_historial", BASE.paciente_tiene_historial, BASE.Paciente, BASE.Historial, None),
-        ("parametro_necesita_ser_monitoreado_por_tratamiento", BASE.parametro_necesita_ser_monitoreado_por_tratamiento, BASE.Parametro_Monitorizacion, BASE.Tratamiento, BASE.tratamiento_necesita_monitorear_parametro_de_monitorizacion),
-        ("tratamiento_es_administrado_medicamento", BASE.tratamiento_es_administrado_medicamento, BASE.Tratamiento, BASE.Medicamento, None),
-        ("tratamiento_hecho_en_hospital", BASE.tratamiento_hecho_en_hospital, BASE.Tratamiento, BASE.Hospital, None),
-        ("tratamiento_necesita_monitorear_parametro_de_monitorizacion", BASE.tratamiento_necesita_monitorear_parametro_de_monitorizacion, BASE.Tratamiento, BASE.Parametro_Monitorizacion, None),
-        ("tratamiento_pertenece_a_historial", BASE.tratamiento_pertenece_a_historial, BASE.Tratamiento, BASE.Historial, None),
+        ("departamento_contiene_medicos", BASE.departamento_contiene_medicos, BASE.Departamento, BASE.Medico, BASE.medico_es_contenido_por_departamento), #
+        ("departamento_es_contenido_por_hospital", BASE.departamento_es_contenido_por_hospital, BASE.Departamento, BASE.Hospital, BASE.hospital_contiene_departamento), #
+        ("historial_hecho_en_hospital", BASE.historial_hecho_en_hospital, BASE.Historial, BASE.Hospital, BASE.hospital_tiene_historial), #
+        ("historial_pertenece_a_paciente", BASE.historial_pertenece_a_paciente, BASE.Historial, BASE.Paciente, BASE.paciente_tiene_historial), #
+        ("historial_tiene_tratamiento", BASE.historial_tiene_tratamiento, BASE.Historial, BASE.Tratamiento, BASE.tratamiento_pertenece_a_historial), #
+        ("hospital_contiene_departamento", BASE.hospital_contiene_departamento, BASE.Hospital, BASE.Departamento, None), #
+        ("hospital_tiene_historial", BASE.hospital_tiene_historial, BASE.Hospital, BASE.Historial, None), #
+        ("hospital_tiene_tratamiento", BASE.hospital_tiene_tratamiento, BASE.Hospital, BASE.Tratamiento, BASE.tratamiento_hecho_en_hospital), #
+        ("medicamento_se_administra_en_tratamiento", BASE.medicamento_se_administra_en_tratamiento, BASE.Medicamento, BASE.Tratamiento, BASE.tratamiento_es_administrado_medicamento), #
+        ("medico_es_contenido_por_departamento", BASE.medico_es_contenido_por_departamento, BASE.Medico, BASE.Departamento, None), #
+        ("paciente_tiene_historial", BASE.paciente_tiene_historial, BASE.Paciente, BASE.Historial, None), #
+        ("parametro_necesita_ser_monitoreado_por_tratamiento", BASE.parametro_necesita_ser_monitoreado_por_tratamiento, BASE.Parametro_Monitorizacion, BASE.Tratamiento, BASE.tratamiento_necesita_monitorear_parametro_de_monitorizacion), #
+        ("tratamiento_es_administrado_medicamento", BASE.tratamiento_es_administrado_medicamento, BASE.Tratamiento, BASE.Medicamento, None), #
+        ("tratamiento_hecho_en_hospital", BASE.tratamiento_hecho_en_hospital, BASE.Tratamiento, BASE.Hospital, None), #
+        ("tratamiento_necesita_monitorear_parametro_de_monitorizacion", BASE.tratamiento_necesita_monitorear_parametro_de_monitorizacion, BASE.Tratamiento, BASE.Parametro_Monitorizacion, None), #
+        ("tratamiento_pertenece_a_historial", BASE.tratamiento_pertenece_a_historial, BASE.Tratamiento, BASE.Historial, None), #
     ]
 
     # Añadir propiedades de objeto al grafo
@@ -76,7 +76,7 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
             g.add((prop, OWL.inverseOf, inverse))
 
     #################################################################
-    #    Object Properties
+    #    Data Properties
     #################################################################
 
     # Lista de propiedades de datos
@@ -151,6 +151,111 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
     with open(json_path_tratamientos, "r", encoding="utf-8") as f:
         tratamientos = json.load(f)
 
+
+    #################################################################
+    #    Primera iteración sobre los JSON
+    #################################################################
+
+    # Crear los individuos de todas las clases y object properties posibles
+    # Crear individuos de paciente para cada entrada de paciente
+    for paciente in pacientes:
+        # Crear individuo del paciente
+        paciente_uri = URIRef(f"{BASE}{paciente['_id']}")
+        g.add((paciente_uri, RDF.type, PACIENTE))
+
+        # Crear individuos de historial para cada entrada de historial
+        for historial in paciente.get("historial", []):
+            historial_id = f"{paciente['_id']}_historial_{paciente['historial'].index(historial)}"
+            historial_uri = URIRef(f"{BASE}{historial_id}")
+            g.add((historial_uri, RDF.type, HISTORIAL))
+            
+            # Relaciones
+            g.add((paciente_uri, BASE.paciente_tiene_historial, historial_uri))
+            g.add((historial_uri, BASE.historial_pertenece_a_paciente, paciente_uri))
+            
+
+    # Crear individuos para los tratamientos y sus parámetros y medicamentos
+    for idx1, tratamiento in enumerate(tratamientos):
+        # Crear individuo del tratamiento
+        tratamiento_uri = URIRef(f"{BASE}{tratamiento['_id']}")
+        g.add((tratamiento_uri, RDF.type, TRATAMIENTO))
+
+        # Crear individuos para los medicamentos asociados al tratamiento
+        for idx3, _ in enumerate(tratamiento.get("medicamentos", [])):
+            medicamento_id = f"{idx1}_{idx3}"
+            medicamento_uri = URIRef(f"{BASE}{medicamento_id}")
+            g.add((medicamento_uri, RDF.type, MEDICAMENTO))
+
+            # Relaciones
+            g.add((tratamiento_uri, BASE.tratamiento_es_administrado_medicamento, medicamento_uri))
+            g.add((medicamento_uri, BASE.medicamento_se_administra_en_tratamiento, tratamiento_uri))
+            
+
+        # Crear individuos para los parámetros de monitorización asociados al tratamiento
+        for idx2, _ in enumerate(tratamiento.get("regimen").get("monitorizacion").get("parametros", [])):
+            parametro_id = f"{idx1}_{idx2}"
+            parametro_uri = URIRef(f"{BASE}{parametro_id}")
+            g.add((parametro_uri, RDF.type, PARAMETRO_MONITORIZACION))
+
+            # Relaciones
+            g.add((tratamiento_uri, BASE.tratamiento_necesita_monitorear_parametro_de_monitorizacion, parametro_uri))
+            g.add((parametro_uri, BASE.parametro_necesita_ser_monitoreado_por_tratamiento, tratamiento_uri))
+
+    # Crear individuos para los hospitales y sus departamentos y medicos
+    for hospital in hospitales:
+        # Crear individuo del hospital
+        hospital_uri = URIRef(f"{BASE}{hospital['_id']}")
+        g.add((hospital_uri, RDF.type, HOSPITAL))
+
+        for tratamiento in hospital.get("tratamientos_posibles", []):
+            tratamiento_uri = URIRef(f"{BASE}{tratamiento}")
+
+            # Relaciones
+            g.add((tratamiento_uri, BASE.tratamiento_hecho_en_hospital, hospital_uri))
+            g.add((hospital_uri, BASE.hospital_tiene_tratamiento, tratamiento_uri))
+
+        for departamento in hospital.get("departamentos", []):
+            departamento_uri = URIRef(f"{BASE}{departamento['departamento_id']}")
+            g.add((departamento_uri, RDF.type, DEPARTAMENTO))
+
+            # Relaciones
+            g.add((departamento_uri, BASE.departamento_es_contenido_por_hospital, hospital_uri))
+            g.add((hospital_uri, BASE.hospital_contiene_departamento, departamento_uri))
+
+            for medico in departamento.get("medicos", []):
+                medico_uri = URIRef(f"{BASE}{medico['medico_id']}")
+                g.add((medico_uri, RDF.type, MEDICO))
+
+                # Relaciones
+                g.add((medico_uri, BASE.medico_es_contenido_por_departamento, departamento_uri))
+                g.add((departamento_uri, BASE.departamento_contiene_medicos, medico_uri))
+
+    #################################################################
+    #    Segunda iteración sobre los JSON
+    #################################################################
+
+    for paciente in pacientes:
+        for historial in paciente.get("historial", []):
+            historial_id = f"{paciente['_id']}_historial_{paciente['historial'].index(historial)}"
+            historial_uri = URIRef(f"{BASE}{historial_id}")
+
+            hospital_uri = URIRef(f"{BASE}{historial["hospital"]}")
+            tratamiento_uri = URIRef(f"{BASE}{historial["tratamientos"]}")
+
+            # Relaciones
+            g.add((historial_uri, BASE.historial_hecho_en_hospital, hospital_uri))
+            g.add((hospital_uri, BASE.hospital_tiene_historial, historial_uri))
+
+            g.add((historial_uri, BASE.historial_tiene_tratamiento, tratamiento_uri))
+            g.add((tratamiento_uri, BASE.tratamiento_pertenece_a_historial, historial_uri))
+
+
+            
+
+    # Guardar la ontologia
+    g.serialize(salida_path, format="turtle")
+
+    '''
     PROPIEDADES = {
         "id": BASE.paciente_id,
         "nombre": BASE.paciente_nombre,
@@ -184,40 +289,42 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
             
             g.add((paciente_uri, prop, value_literal))
 
+'''
 
 
-def insertar_pacientes(g, pacientes, namespace_base):
+'''
+def insertar_pacientes(g, pacientes, BASE):
     """
     Inserta los pacientes en el grafo RDF a partir de los datos JSON.
     
     :param g: Grafo RDF donde se insertarán los datos.
     :param pacientes: Lista de diccionarios con información de los pacientes.
-    :param namespace_base: Namespace base de la ontología.
+    :param BASE: Namespace base de la ontología.
     """
-    PACIENTE = namespace_base.Paciente
+    PACIENTE = BASE.Paciente
     PROPIEDADES = {
-        "_id": namespace_base.paciente_id,
-        "nombre": namespace_base.paciente_nombre,
-        "apellido": namespace_base.paciente_apellido,
-        "fecha_nacimiento": namespace_base.paciente_fecha_nacimiento,
-        "dni": namespace_base.paciente_dni,
-        "nss": namespace_base.paciente_nss,
-        "sexo": namespace_base.paciente_sexo,
-        "etnia": namespace_base.paciente_etnia,
+        "_id": BASE.paciente_id,
+        "nombre": BASE.paciente_nombre,
+        "apellido": BASE.paciente_apellido,
+        "fecha_nacimiento": BASE.paciente_fecha_nacimiento,
+        "dni": BASE.paciente_dni,
+        "nss": BASE.paciente_nss,
+        "sexo": BASE.paciente_sexo,
+        "etnia": BASE.paciente_etnia,
     }
     CONTACTO_PROPIEDADES = {
-        "telefono": namespace_base.paciente_telefono,
-        "correo": namespace_base.paciente_correo,
+        "telefono": BASE.paciente_telefono,
+        "correo": BASE.paciente_correo,
     }
     DIRECCION_PROPIEDADES = {
-        "calle": namespace_base.paciente_calle,
-        "ciudad": namespace_base.paciente_ciudad,
-        "codigo_postal": namespace_base.paciente_codigo_postal,
-        "pais": namespace_base.paciente_pais,
+        "calle": BASE.paciente_calle,
+        "ciudad": BASE.paciente_ciudad,
+        "codigo_postal": BASE.paciente_codigo_postal,
+        "pais": BASE.paciente_pais,
     }
 
     for paciente in pacientes:
-        paciente_uri = URIRef(f"{namespace_base}{paciente['_id']}")  # Usar _id como URI única
+        paciente_uri = URIRef(f"{BASE}{paciente['_id']}")  # Usar _id como URI única
         g.add((paciente_uri, RDF.type, PACIENTE))
         
         # Insertar propiedades de nivel superior
@@ -249,4 +356,9 @@ def insertar_pacientes(g, pacientes, namespace_base):
                         value_literal = Literal(direccion[key], datatype=XSD.string)
                         g.add((paciente_uri, prop, value_literal))
                           
-    
+    '''
+rellenar_ontologia_completa(json_path_pacientes = "../../data/pacientes.json",
+                             json_path_hospitales = "../../data/hospitales.json",
+                               json_path_tratamientos = "../../data/tratamientos.json",
+                                 salida_path  = "../../data/ontologia_completa/ontologia_completa.ttl",
+                                   max_items=None)
