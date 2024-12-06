@@ -1,0 +1,16 @@
+Número de tratamientos realizados a cada paciente
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  (CONCAT(?paciente_nombre, " ", ?paciente_apellido) AS ?nombre_completo)
+  (COUNT(DISTINCT ?tratamiento) as ?numero_de_tratamientos)
+WHERE {
+  ?paciente rdf:type o:Paciente.
+  ?paciente o:paciente_nombre ?paciente_nombre .
+  ?paciente o:paciente_apellido ?paciente_apellido .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+}
+GROUP BY ?paciente_nombre ?paciente_apellido
+ORDER BY DESC(?numero_de_tratamientos)

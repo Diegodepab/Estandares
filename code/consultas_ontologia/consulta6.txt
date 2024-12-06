@@ -1,0 +1,28 @@
+Información de hospitales que tienen departamento de Oncología
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT 
+  STR(?nombre_hospital) AS ?hospital
+  STR(?calle) AS ?calle
+  STR(?ciudad) AS ?ciudad
+  STR(?codigo_postal) AS ?codigo_postal
+  STR(?pais) AS ?pais
+  (GROUP_CONCAT(DISTINCT STR(?departamento_servicio); separator=", ") AS ?servicios)
+WHERE {
+  
+  ?hospital rdf:type o:Hospital .
+  ?hospital o:hospital_nombre ?nombre_hospital .
+  ?hospital o:hospital_calle ?calle .
+  ?hospital o:hospital_ciudad ?ciudad .
+  ?hospital o:hospital_codigo_postal ?codigo_postal .
+  ?hospital o:hospital_pais ?pais .
+  
+  ?hospital o:hospital_contiene_departamento ?departamento .
+  ?departamento o:departamento_nombre ?departamento_nombre .
+  ?departamento o:departamento_servicio ?departamento_servicio .
+  
+  FILTER (str(?departamento_nombre) = "Oncología")
+}
+GROUP BY ?nombre_hospital ?calle ?ciudad ?codigo_postal ?pais ?departamento_nombre
+ORDER BY ?nombre_hospital
