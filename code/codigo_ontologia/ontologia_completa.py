@@ -81,51 +81,51 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
 
     # Lista de propiedades de datos
     data_properties = [
-        ("departamento_extension", BASE.departamento_extension, BASE.Departamento, XSD.string),
-        ("departamento_nombre", BASE.departamento_nombre, BASE.Departamento, XSD.string),
-        ("departamento_servicio", BASE.departamento_servicio, BASE.Departamento, XSD.string),
-        ("enfermedad_categoria", BASE.enfermedad_categoria, BASE.Tratamiento, XSD.string),
-        ("enfermedad_nombre", BASE.enfermedad_nombre, BASE.Tratamiento, XSD.string),
-        ("enfermedad_severida", BASE.enfermedad_severida, BASE.Tratamiento, XSD.string),
-        ("enfermedad_sintoma", BASE.enfermedad_sintoma, BASE.Tratamiento, XSD.string),
-        ("historial_fecha", BASE.historial_fecha, BASE.Historial, XSD.date),
-        ("hospital_calle", BASE.hospital_calle, BASE.Hospital, XSD.string),
-        ("hospital_ciudad", BASE.hospital_ciudad, BASE.Hospital, XSD.string),
-        ("hospital_codigo_postal", BASE.hospital_codigo_postal, BASE.Hospital, XSD.string),
-        ("hospital_email", BASE.hospital_email, BASE.Hospital, XSD.string),
-        ("hospital_nombre", BASE.hospital_nombre, BASE.Hospital, XSD.string),
-        ("hospital_pais", BASE.hospital_pais, BASE.Hospital, XSD.string),
-        ("hospital_telefono", BASE.hospital_telefono, BASE.Hospital, XSD.string),
-        ("medicamento_efecto_secundario", BASE.medicamento_efecto_secundario, BASE.Medicamento, XSD.string),
-        ("medicamento_nombre", BASE.medicamento_nombre, BASE.Medicamento, XSD.string),
-        ("medicamiento_frecuencia", BASE.medicamiento_frecuencia, BASE.Medicamento, XSD.string),
-        ("medico_anos_experiencia", BASE.medico_anos_experiencia, BASE.Medico, XSD.integer),
-        ("medico_dia_laboral", BASE.medico_dia_laboral, BASE.Medico, XSD.string),
-        ("medico_especialidad", BASE.medico_especialidad, BASE.Medico, XSD.string),
-        ("medico_horas", BASE.medico_horas, BASE.Medico, XSD.string),
-        ("medico_nombre", BASE.medico_nombre, BASE.Medico, XSD.string),
-        ("paciente_apellido", BASE.paciente_apellido, BASE.Paciente, XSD.string),
-        ("paciente_calle", BASE.paciente_calle, BASE.Paciente, XSD.string),
-        ("paciente_ciudad", BASE.paciente_ciudad, BASE.Paciente, XSD.string),
-        ("paciente_codigo_postal", BASE.paciente_codigo_postal, BASE.Paciente, XSD.string),
-        ("paciente_correo", BASE.paciente_correo, BASE.Paciente, XSD.string),
-        ("paciente_dni", BASE.paciente_dni, BASE.Paciente, XSD.string),
-        ("paciente_etnia", BASE.paciente_etnia, BASE.Paciente, XSD.string),
-        ("paciente_fecha_nacimiento", BASE.paciente_fecha_nacimiento, BASE.Paciente, XSD.date),
-        ("paciente_id", BASE.paciente_id, BASE.Paciente, XSD.string),
-        ("paciente_nombre", BASE.paciente_nombre, BASE.Paciente, XSD.string),
-        ("paciente_nss", BASE.paciente_nss, BASE.Paciente, XSD.int),
-        ("paciente_pais", BASE.paciente_pais, BASE.Paciente, XSD.string),
-        ("paciente_sexo", BASE.paciente_sexo, BASE.Paciente, XSD.string),
-        ("paciente_telefono", BASE.paciente_telefono, BASE.Paciente, XSD.string),
-        ("parametro_nombre", BASE.parametro_nombre, BASE.Parametro_Monitorizacion, XSD.string),
-        ("parametro_referencia", BASE.parametro_referencia, BASE.Parametro_Monitorizacion, XSD.string),
-        ("parametro_unidad", BASE.parametro_unidad, BASE.Parametro_Monitorizacion, XSD.string),
-        ("tratamiento_dias_duracion", BASE.tratamiento_dias_duracion, BASE.Tratamiento, XSD.int),
-        ("tratamiento_frecuencia_dosis", BASE.tratamiento_frecuencia_dosis, BASE.Tratamiento, XSD.string),
-        ("tratamiento_id", BASE.tratamiento_id, BASE.Tratamiento, XSD.string),
-        ("tratamiento_nombre", BASE.tratamiento_nombre, BASE.Tratamiento, XSD.string),
-        ("tratamiento_via_administracion", BASE.tratamiento_via_administracion, BASE.Tratamiento, XSD.string),
+        ("departamento_extension", BASE.departamento_extension, BASE.Departamento, XSD.string), #
+        ("departamento_nombre", BASE.departamento_nombre, BASE.Departamento, XSD.string), #
+        ("departamento_servicio", BASE.departamento_servicio, BASE.Departamento, XSD.string), #
+        ("enfermedad_categoria", BASE.enfermedad_categoria, BASE.Tratamiento, XSD.string), #
+        ("enfermedad_nombre", BASE.enfermedad_nombre, BASE.Tratamiento, XSD.string), #
+        ("enfermedad_severida", BASE.enfermedad_severida, BASE.Tratamiento, XSD.string), #
+        ("enfermedad_sintoma", BASE.enfermedad_sintoma, BASE.Tratamiento, XSD.string), #
+        ("historial_fecha", BASE.historial_fecha, BASE.Historial, XSD.date), #
+        ("hospital_calle", BASE.hospital_calle, BASE.Hospital, XSD.string), #
+        ("hospital_ciudad", BASE.hospital_ciudad, BASE.Hospital, XSD.string), #
+        ("hospital_codigo_postal", BASE.hospital_codigo_postal, BASE.Hospital, XSD.string), #
+        ("hospital_email", BASE.hospital_email, BASE.Hospital, XSD.string), #
+        ("hospital_nombre", BASE.hospital_nombre, BASE.Hospital, XSD.string), #
+        ("hospital_pais", BASE.hospital_pais, BASE.Hospital, XSD.string), #
+        ("hospital_telefono", BASE.hospital_telefono, BASE.Hospital, XSD.string), #
+        ("medicamento_efecto_secundario", BASE.medicamento_efecto_secundario, BASE.Medicamento, XSD.string), #
+        ("medicamento_nombre", BASE.medicamento_nombre, BASE.Medicamento, XSD.string), #
+        ("medicamiento_frecuencia", BASE.medicamiento_frecuencia, BASE.Medicamento, XSD.string), #
+        ("medico_anos_experiencia", BASE.medico_anos_experiencia, BASE.Medico, XSD.integer), #
+        ("medico_dia_laboral", BASE.medico_dia_laboral, BASE.Medico, XSD.string), #
+        ("medico_especialidad", BASE.medico_especialidad, BASE.Medico, XSD.string), #
+        ("medico_horas", BASE.medico_horas, BASE.Medico, XSD.string), #
+        ("medico_nombre", BASE.medico_nombre, BASE.Medico, XSD.string), #
+        ("paciente_apellido", BASE.paciente_apellido, BASE.Paciente, XSD.string), #
+        ("paciente_calle", BASE.paciente_calle, BASE.Paciente, XSD.string), #
+        ("paciente_ciudad", BASE.paciente_ciudad, BASE.Paciente, XSD.string), #
+        ("paciente_codigo_postal", BASE.paciente_codigo_postal, BASE.Paciente, XSD.string), #
+        ("paciente_correo", BASE.paciente_correo, BASE.Paciente, XSD.string), #
+        ("paciente_dni", BASE.paciente_dni, BASE.Paciente, XSD.string), #
+        ("paciente_etnia", BASE.paciente_etnia, BASE.Paciente, XSD.string), #
+        ("paciente_fecha_nacimiento", BASE.paciente_fecha_nacimiento, BASE.Paciente, XSD.date), #
+        ("paciente_id", BASE.paciente_id, BASE.Paciente, XSD.string), #
+        ("paciente_nombre", BASE.paciente_nombre, BASE.Paciente, XSD.string), #
+        ("paciente_nss", BASE.paciente_nss, BASE.Paciente, XSD.int), #
+        ("paciente_pais", BASE.paciente_pais, BASE.Paciente, XSD.string), #
+        ("paciente_sexo", BASE.paciente_sexo, BASE.Paciente, XSD.string), #
+        ("paciente_telefono", BASE.paciente_telefono, BASE.Paciente, XSD.string), #
+        ("parametro_nombre", BASE.parametro_nombre, BASE.Parametro_Monitorizacion, XSD.string), #
+        ("parametro_referencia", BASE.parametro_referencia, BASE.Parametro_Monitorizacion, XSD.string), #
+        ("parametro_unidad", BASE.parametro_unidad, BASE.Parametro_Monitorizacion, XSD.string), #
+        ("tratamiento_dias_duracion", BASE.tratamiento_dias_duracion, BASE.Tratamiento, XSD.int), #
+        ("tratamiento_frecuencia_dosis", BASE.tratamiento_frecuencia_dosis, BASE.Tratamiento, XSD.string), #
+        ("tratamiento_id", BASE.tratamiento_id, BASE.Tratamiento, XSD.string), #
+        ("tratamiento_nombre", BASE.tratamiento_nombre, BASE.Tratamiento, XSD.string), #
+        ("tratamiento_via_administracion", BASE.tratamiento_via_administracion, BASE.Tratamiento, XSD.string), #
     ]
 
     # Añadir propiedades de datos al grafo
@@ -249,8 +249,103 @@ def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_
             g.add((historial_uri, BASE.historial_tiene_tratamiento, tratamiento_uri))
             g.add((tratamiento_uri, BASE.tratamiento_pertenece_a_historial, historial_uri))
 
+    #################################################################
+    #    Carga de los Data Properties
+    #################################################################
 
+    for paciente in pacientes:
+        paciente_uri = URIRef(f"{BASE}{paciente['_id']}")
+
+        g.add((paciente_uri, BASE.paciente_id, Literal(paciente["_id"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_nombre, Literal(paciente["nombre"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_apellido, Literal(paciente["apellido"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_fecha_nacimiento, Literal(paciente["fecha_nacimiento"], datatype=XSD.date)))
+        g.add((paciente_uri, BASE.paciente_sexo, Literal(paciente["sexo"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_dni, Literal(paciente["dni"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_nss, Literal(paciente["nss"], datatype=XSD.int)))
+        g.add((paciente_uri, BASE.paciente_etnia, Literal(paciente["etnia"], datatype=XSD.string)))
+
+        info_contacto = paciente.get("informacion_contacto")
+        g.add((paciente_uri, BASE.paciente_correo, Literal(info_contacto["correo"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_telefono, Literal(info_contacto["telefono"], datatype=XSD.string)))
+
+        direccion = info_contacto.get("direccion")
+        g.add((paciente_uri, BASE.paciente_calle, Literal(direccion["calle"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_ciudad, Literal(direccion["ciudad"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_pais, Literal(direccion["pais"], datatype=XSD.string)))
+        g.add((paciente_uri, BASE.paciente_codigo_postal, Literal(direccion["codigo_postal"], datatype=XSD.string)))
+
+        for historial in paciente.get("historial", []):
+            historial_id = f"{paciente['_id']}_historial_{paciente['historial'].index(historial)}"
+            historial_uri = URIRef(f"{BASE}{historial_id}")
+            g.add((historial_uri, BASE.historial_fecha, Literal(historial["fecha"], datatype=XSD.date)))
             
+    for idx1, tratamiento in enumerate(tratamientos):
+        tratamiento_uri = URIRef(f"{BASE}{tratamiento['_id']}")
+
+        g.add((tratamiento_uri, BASE.tratamiento_id, Literal(tratamiento["_id"], datatype=XSD.string)))
+        g.add((tratamiento_uri, BASE.tratamiento_nombre, Literal(tratamiento["nombre_tratamiento"], datatype=XSD.string)))
+
+        enfermedad = tratamiento.get("enfermedad")
+        g.add((tratamiento_uri, BASE.enfermedad_nombre, Literal(enfermedad["nombre"], datatype=XSD.string)))
+        g.add((tratamiento_uri, BASE.enfermedad_categoria, Literal(enfermedad["categoria"], datatype=XSD.string)))
+        g.add((tratamiento_uri, BASE.enfermedad_severida, Literal(enfermedad["estado_severidad"], datatype=XSD.string)))
+        for sintoma in enfermedad["sintomas"]:
+            g.add((tratamiento_uri, BASE.enfermedad_sintoma, Literal(sintoma, datatype=XSD.string)))
+
+        regimen = tratamiento.get("regimen")
+        g.add((tratamiento_uri, BASE.tratamiento_dias_duracion, Literal(regimen["duracion_dias"], datatype=XSD.int)))
+        g.add((tratamiento_uri, BASE.tratamiento_frecuencia_dosis, Literal(regimen["frecuencia_dosis"], datatype=XSD.string)))
+        g.add((tratamiento_uri, BASE.tratamiento_via_administracion, Literal(regimen["via_administracion"], datatype=XSD.string)))
+
+        for idx2, parametro in enumerate(tratamiento.get("regimen").get("monitorizacion").get("parametros", [])):
+            parametro_id = f"{idx1}_{idx2}"
+            parametro_uri = URIRef(f"{BASE}{parametro_id}")
+            g.add((parametro_uri, BASE.parametro_nombre, Literal(parametro["nombre_parametro"], datatype=XSD.string)))
+            g.add((parametro_uri, BASE.parametro_referencia, Literal(parametro["valor_referencia"], datatype=XSD.string)))
+            g.add((parametro_uri, BASE.parametro_unidad, Literal(parametro["unidad"], datatype=XSD.string)))
+
+        for idx3, medicamento in enumerate(tratamiento.get("medicamentos", [])):
+            medicamento_id = f"{idx1}_{idx3}"
+            medicamento_uri = URIRef(f"{BASE}{medicamento_id}")
+
+            g.add((medicamento_uri, BASE.medicamento_nombre, Literal(medicamento["nombre"], datatype=XSD.string)))
+            g.add((medicamento_uri, BASE.medicamiento_frecuencia, Literal(medicamento["frecuencia"], datatype=XSD.string)))
+            for efecto_secundario in medicamento["efectos_secundarios"]:
+                g.add((medicamento_uri, BASE.medicamento_efecto_secundario, Literal(efecto_secundario, datatype=XSD.string)))
+            
+    for hospital in hospitales:
+        hospital_uri = URIRef(f"{BASE}{hospital['_id']}")
+        g.add((hospital_uri, BASE.hospital_nombre, Literal(hospital["nombre_hospital"], datatype=XSD.string)))
+
+        direccion = hospital.get("direccion")
+        g.add((hospital_uri, BASE.hospital_calle, Literal(direccion["calle"], datatype=XSD.string)))
+        g.add((hospital_uri, BASE.hospital_ciudad, Literal(direccion["ciudad"], datatype=XSD.string)))
+        g.add((hospital_uri, BASE.hospital_codigo_postal, Literal(direccion["codigo_postal"], datatype=XSD.string)))
+        g.add((hospital_uri, BASE.hospital_pais, Literal(direccion["pais"], datatype=XSD.string)))
+
+        contacto = hospital.get("contacto_emergencia")
+        g.add((hospital_uri, BASE.hospital_telefono, Literal(contacto["telefono"], datatype=XSD.string)))
+        g.add((hospital_uri, BASE.hospital_email, Literal(contacto["email"], datatype=XSD.string)))
+
+        for departamento in hospital.get("departamentos", []):
+            departamento_uri = URIRef(f"{BASE}{departamento['departamento_id']}")
+            g.add((departamento_uri, BASE.departamento_nombre, Literal(departamento["nombre"], datatype=XSD.string)))
+            g.add((departamento_uri, BASE.departamento_extension, Literal(departamento["extension"], datatype=XSD.string)))
+
+            for servicio in departamento["servicios"]:
+                g.add((departamento_uri, BASE.departamento_servicio, Literal(servicio, datatype=XSD.string)))
+
+            for medico in departamento.get("medicos", []):
+                medico_uri = URIRef(f"{BASE}{medico['medico_id']}")
+                g.add((medico_uri, BASE.medico_nombre, Literal(medico["nombre"], datatype=XSD.string)))
+                g.add((medico_uri, BASE.medico_especialidad, Literal(medico["especialidad"], datatype=XSD.string)))
+                g.add((medico_uri, BASE.medico_anos_experiencia, Literal(medico["años_experiencia"], datatype=XSD.int)))
+
+                horario = medico.get("horario")
+                for dia in horario["dias_laborales"]:
+                    g.add((medico_uri, BASE.medico_dia_laboral, Literal(dia, datatype=XSD.string)))
+                g.add((medico_uri, BASE.medico_horas, Literal(horario["horas"], datatype=XSD.string)))
 
     # Guardar la ontologia
     g.serialize(salida_path, format="turtle")
