@@ -1,0 +1,30 @@
+Resultados de Tratamiento de Diabetes Tipo 2 en mayores de 50(DNI	Fecha de Nacimiento	Sexo	Etnia	Teléfono	Correo	Dirección)
+
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  ?paciente_dni
+  ?paciente_fecha_nacimiento
+  ?paciente_etnia
+  ?paciente_sexo
+  ?paciente_telefono
+  ?paciente_correo
+  ?enfermedad_nombre
+  (CONCAT(?paciente_ciudad, ", ", ?paciente_codigo_postal) AS ?direccion)
+WHERE {
+  ?paciente rdf:type o:Paciente .
+  ?paciente o:paciente_dni ?paciente_dni .
+  ?paciente o:paciente_fecha_nacimiento ?paciente_fecha_nacimiento .
+  ?paciente o:paciente_sexo ?paciente_sexo .
+  ?paciente o:paciente_etnia ?paciente_etnia .
+  ?paciente o:paciente_telefono ?paciente_telefono .
+  ?paciente o:paciente_correo ?paciente_correo .
+  ?paciente o:paciente_ciudad ?paciente_ciudad .
+  ?paciente o:paciente_codigo_postal ?paciente_codigo_postal .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+  ?tratamiento o:enfermedad_nombre ?enfermedad_nombre .
+  FILTER(?enfermedad_nombre =
+"Diabetes Tipo 2"^^<http://www.w3.org/2001/XMLSchema#string>)
+}

@@ -1,0 +1,19 @@
+Información general de los tratamientos
+
+
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT  ?tratamiento
+?tratamiento_nombre
+?tratamiento_dias_duracion
+?tratamiento_frecuencia_dosis
+?tratamiento_via_administracion
+WHERE {
+ ?tratamiento rdf:type o:Tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+  ?tratamiento o:tratamiento_dias_duracion ?tratamiento_dias_duracion .
+ ?tratamiento  o:tratamiento_frecuencia_dosis ?tratamiento_frecuencia_dosis .
+ ?tratamiento o:tratamiento_via_administracion ?tratamiento_via_administracion
+
+}

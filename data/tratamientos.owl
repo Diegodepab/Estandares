@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/carme/ontologies/2024/10/untitled-ontology-26/"
+     xml:base="http://www.semanticweb.org/carme/ontologies/2024/10/untitled-ontology-26/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#necesita_monitorear -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#necesita_monitorear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_categoria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_categoria">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_severida -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_severida">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_sintoma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_sintoma">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_referencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_referencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_unidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_unidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_dias_duracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_dias_duracion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_frecuencia_dosis -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_frecuencia_dosis">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_via_administracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_via_administracion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
