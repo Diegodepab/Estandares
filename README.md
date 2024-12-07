@@ -243,9 +243,12 @@ Se utilizó un razonador para mejorar la accesibilidad de la información y perm
 
 Se diseñaron 6 consultas **SPARQL** para explorar el espacio de búsqueda de la ontología. A continuación se muestran ejemplos de las consultas implementadas:
 
-1. **Lista de tratamientos por hospital**.
-2. **Listar los tratamientos aplicados a pacientes mayores de 50 años**.
-?
+1. **Lista de tratamientos por hospital separados por una ", "**.
+2. **Resultados de Tratamiento de Diabetes Tipo 2 en mayores de 50 (DNI	Fecha de Nacimiento	Sexo	Etnia	Teléfono	Correo	Dirección)**.
+3. **Información general de los tratamientos (nombre, duración, frecuencia de dosis y vía de administración**
+4. **Número de tratamientos realizados a cada paciente**
+5. **Veces que se ha aplicado un tratamiento con duración superior a un mes (30 días) (ordenado por duración)**
+6. **Información de hospitales que tienen departamento de Oncología**
 
 Las consultas y sus resultados se encuentran en el archivo `consultas.txt`, mientras que la ontología generada y razonada está en los archivos `?.owl`.
 

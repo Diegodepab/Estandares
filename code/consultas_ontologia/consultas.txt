@@ -1,0 +1,137 @@
+# Consultas.txt, archivo con todas las consultas SPARQL 
+
+# 1) Lista de tratamientos por hospital separados por una ", ".
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  ?hospital_nombre
+  (GROUP_CONCAT(?tratamiento_nombre; separator=", ") AS ?tratamientos)
+WHERE {
+  ?hospital rdf:type o:Hospital .
+  ?hospital o:hospital_nombre ?hospital_nombre .
+  ?hospital o:hospital_tiene_tratamiento ?tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+}
+GROUP BY ?hospital_nombre
+
+# 2) Resultados de Tratamiento de Diabetes Tipo 2 en mayores de 50 (DNI Fecha de Nacimiento Sexo Etnia Teléfono Correo Dirección).
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  ?paciente_dni
+  ?paciente_fecha_nacimiento
+  ?paciente_etnia
+  ?paciente_sexo
+  ?paciente_telefono
+  ?paciente_correo
+  ?enfermedad_nombre
+  (CONCAT(?paciente_ciudad, ", ", ?paciente_codigo_postal) AS ?direccion)
+WHERE {
+  ?paciente rdf:type o:Paciente .
+  ?paciente o:paciente_dni ?paciente_dni .
+  ?paciente o:paciente_fecha_nacimiento ?paciente_fecha_nacimiento .
+  ?paciente o:paciente_sexo ?paciente_sexo .
+  ?paciente o:paciente_etnia ?paciente_etnia .
+  ?paciente o:paciente_telefono ?paciente_telefono .
+  ?paciente o:paciente_correo ?paciente_correo .
+  ?paciente o:paciente_ciudad ?paciente_ciudad .
+  ?paciente o:paciente_codigo_postal ?paciente_codigo_postal .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+  ?tratamiento o:enfermedad_nombre ?enfermedad_nombre .
+  FILTER(?enfermedad_nombre =
+"Diabetes Tipo 2"^^<http://www.w3.org/2001/XMLSchema#string>)
+}
+
+
+# 3) Información general de los tratamientos (nombre, duración, frecuencia de dosis y vía de administración
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT  ?tratamiento
+?tratamiento_nombre
+?tratamiento_dias_duracion
+?tratamiento_frecuencia_dosis
+?tratamiento_via_administracion
+WHERE {
+ ?tratamiento rdf:type o:Tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+  ?tratamiento o:tratamiento_dias_duracion ?tratamiento_dias_duracion .
+ ?tratamiento  o:tratamiento_frecuencia_dosis ?tratamiento_frecuencia_dosis .
+ ?tratamiento o:tratamiento_via_administracion ?tratamiento_via_administracion
+
+}
+
+# 4) Número de tratamientos realizados a cada paciente
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  (CONCAT(?paciente_nombre, " ", ?paciente_apellido) AS ?nombre_completo)
+  (COUNT(DISTINCT ?tratamiento) as ?numero_de_tratamientos)
+WHERE {
+  ?paciente rdf:type o:Paciente.
+  ?paciente o:paciente_nombre ?paciente_nombre .
+  ?paciente o:paciente_apellido ?paciente_apellido .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+}
+GROUP BY ?paciente_nombre ?paciente_apellido
+ORDER BY DESC(?numero_de_tratamientos)
+
+
+# 5) Veces que se ha aplicado un tratamiento con duración superior a un mes (30 días) (ordenado por duración)
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT DISTINCT
+  STR(?tratamiento_nombre) AS ?tratamiento
+  STR(?tratamiento_dias_duracion) AS ?duracion
+  (COUNT(?historial) AS ?veces_aplicado)
+WHERE {
+  ?paciente rdf:type o:Paciente .
+  ?paciente o:paciente_nombre ?paciente_nombre .
+  ?paciente o:paciente_apellido ?paciente_apellido .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+  ?tratamiento rdf:type o:Tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+  ?tratamiento o:tratamiento_dias_duracion ?tratamiento_dias_duracion .
+  
+  FILTER (?tratamiento_dias_duracion > 30)
+}
+GROUP BY ?tratamiento_nombre ?tratamiento_dias_duracion
+ORDER BY DESC(?tratamiento_dias_duracion)
+
+
+# 6) Información de hospitales que tienen departamento de Oncología
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT 
+  STR(?nombre_hospital) AS ?hospital
+  STR(?calle) AS ?calle
+  STR(?ciudad) AS ?ciudad
+  STR(?codigo_postal) AS ?codigo_postal
+  STR(?pais) AS ?pais
+  (GROUP_CONCAT(DISTINCT STR(?departamento_servicio); separator=", ") AS ?servicios)
+WHERE {
+  
+  ?hospital rdf:type o:Hospital .
+  ?hospital o:hospital_nombre ?nombre_hospital .
+  ?hospital o:hospital_calle ?calle .
+  ?hospital o:hospital_ciudad ?ciudad .
+  ?hospital o:hospital_codigo_postal ?codigo_postal .
+  ?hospital o:hospital_pais ?pais .
+  
+  ?hospital o:hospital_contiene_departamento ?departamento .
+  ?departamento o:departamento_nombre ?departamento_nombre .
+  ?departamento o:departamento_servicio ?departamento_servicio .
+  
+  FILTER (str(?departamento_nombre) = "Oncología")
+}
+GROUP BY ?nombre_hospital ?calle ?ciudad ?codigo_postal ?pais ?departamento_nombre
+ORDER BY ?nombre_hospital
+
