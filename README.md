@@ -4,8 +4,9 @@ Este proyecto forma parte de la asignatura de **Estándares de Datos Abiertos e 
 
 ## Índice
 1. [T1 - Diseño y Poblamiento de la Base de Datos](#diseño-y-poblamiento-de-la-base-de-datos)
-2. [T2 - Documentos XML y Vistas HTML mediante XSLT](#t2---documentos-xml-y-vistas-html-mediante-xslt)
-3. [Autores](#Autores)
+2. [T2 - Documentos XML y Vistas HTML mediante XSLT](#documentos-xml-y-vistas-html-mediante-xslt)
+3. [T3 - Diseño de ontología en Protege y consultas SPARQL](#Diseño-de-ontología-en-Protege-y-consultas-SPARQL)
+5. [Autores](#Autores)
 
 ## Diseño y Poblamiento de la Base de Datos
 
@@ -104,7 +105,7 @@ Cada colección está organizada con varios niveles de anidamiento para permitir
 
 Los **archivos JSON** finales están disponibles en la carpeta `data`, mientras que los **scripts de generación** se encuentran en `code/codigo_de_generacion`.
 
-## T2 - Documentos XML y Vistas HTML mediante XSLT
+## Documentos XML y Vistas HTML mediante XSLT
 
 En esta segunda parte, se desarrolló un script en Python que ejecuta lo siguiente:
 
@@ -135,6 +136,129 @@ En esta segunda parte, se desarrolló un script en Python que ejecuta lo siguien
 El script y los ejemplos están disponibles en la carpeta `code/consultas_mongoDB`. Ten en cuenta que para ejecutar las consultas se requieren credenciales para acceder a la base de datos.
 
 ---
+
+## Diseño de ontología en Protege y consultas SPARQL
+
+En esta fase, se diseñó una ontología utilizando **protégé**, basada en las colecciones interconectadas de la base de datos. La ontología incluye tanto **propiedades de objeto** que reflejan las relaciones entre las clases (por ejemplo, entre *Hospital* y *Paciente*) como **propiedades de datos** que modelan los datos literales (por ejemplo, el nombre de un hospital o la fecha de un tratamiento).
+
+### Estructura de la ontología
+
+<details>
+<summary> Clases de la ontología: </summary>
+ 
+- **Departamento**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento`
+
+- **Historial**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial`
+
+- **Hospital**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital`
+
+- **Medicamento**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento`
+
+- **Medico**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico`
+
+- **Paciente**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente`
+
+- **Parametro_Monitorizacion**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion`
+
+- **Tratamiento**  
+  `http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento`
+
+</details>
+
+<details>
+<summary> Propiedades de objetos de la ontología: </summary>
+ 
+- **departamento_contiene_medicos**  
+  Relación inversa: `medico_es_contenido_por_departamento`  
+  Dominio: `Departamento`  
+  Rango: `Medico`
+
+- **departamento_es_contenido_por_hospital**  
+  Relación inversa: `hospital_contiene_departamento`  
+  Dominio: `Departamento`  
+  Rango: `Hospital`
+
+- **historial_hecho_en_hospital**  
+  Relación inversa: `hospital_tiene_historial`  
+  Dominio: `Historial`  
+  Rango: `Hospital`
+
+- **historial_pertenece_a_paciente**  
+  Relación inversa: `paciente_tiene_historial`  
+  Dominio: `Historial`  
+  Rango: `Paciente`
+
+- **historial_tiene_tratamiento**  
+  Relación inversa: `tratamiento_pertenece_a_historial`  
+  Dominio: `Historial`  
+  Rango: `Tratamiento`
+
+- **hospital_contiene_departamento**  
+  Dominio: `Hospital`  
+  Rango: `Departamento`
+
+- **hospital_tiene_historial**  
+  Dominio: `Hospital`  
+  Rango: `Historial`
+
+- **hospital_tiene_tratamiento**  
+  Relación inversa: `tratamiento_hecho_en_hospital`  
+  Dominio: `Hospital`  
+  Rango: `Tratamiento`
+
+- **medicamento_se_administra_en_tratamiento**  
+  Relación inversa: `tratamiento_es_administrado_medicamento`  
+  Dominio: `Medicamento`  
+  Rango: `Tratamiento`
+
+- **medico_es_contenido_por_departamento**  
+  Dominio: `Medico`  
+  Rango: `Departamento`
+
+- **paciente_tiene_historial**  
+  Dominio: `Paciente`  
+  Rango: `Historial`
+
+- **parametro_necesita_ser_monitoreado_por_tratamiento**  
+  Relación inversa: `tratamiento_necesita_monitorear_parametro_de_monitorizacion`  
+  Dominio: `Parametro_Monitorizacion`  
+  Rango: `Tratamiento`
+
+</details>
+
+
+
+### Razonamiento
+
+Se utilizó un razonador para mejorar la accesibilidad de la información y permitir la inferencia de nuevas relaciones, tal como se indica.
+
+### Consultas SPARQL
+
+Se diseñaron 6 consultas **SPARQL** para explorar el espacio de búsqueda de la ontología. A continuación se muestran ejemplos de las consultas implementadas:
+
+1. **Lista de tratamientos por hospital**.
+2. **Listar los tratamientos aplicados a pacientes mayores de 50 años**.
+?
+
+Las consultas y sus resultados se encuentran en el archivo `consultas.txt`, mientras que la ontología generada y razonada está en los archivos `?.owl`.
+
+### Generación de grafo RDF y ejecución de consultas en Python
+
+Se implementó un **script en Python** utilizando la librería **RDFlib** para:
+
+1. Generar un grafo de tripletas **RDF** con los individuos extraídos de la base de datos **MongoDB**.
+2. Ejecutar las consultas **SPARQL** diseñadas en el punto anterior sobre el grafo generado.
+
+El script se encuentra en el archivo `?.py`.
+
+
 
 ## Autores
 
