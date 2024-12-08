@@ -1,0 +1,22 @@
+Veces que se ha aplicado un tratamiento con duración superior a un mes (30 días) (ordenado por duración)
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT DISTINCT
+  STR(?tratamiento_nombre) AS ?tratamiento
+  STR(?tratamiento_dias_duracion) AS ?duracion
+  (COUNT(?historial) AS ?veces_aplicado)
+WHERE {
+  ?paciente rdf:type o:Paciente .
+  ?paciente o:paciente_nombre ?paciente_nombre .
+  ?paciente o:paciente_apellido ?paciente_apellido .
+  ?paciente o:paciente_tiene_historial ?historial .
+  ?historial o:historial_tiene_tratamiento ?tratamiento .
+  ?tratamiento rdf:type o:Tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+  ?tratamiento o:tratamiento_dias_duracion ?tratamiento_dias_duracion .
+  
+  FILTER (?tratamiento_dias_duracion > 30)
+}
+GROUP BY ?tratamiento_nombre ?tratamiento_dias_duracion
+ORDER BY DESC(?tratamiento_dias_duracion)

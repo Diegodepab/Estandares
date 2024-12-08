@@ -1,0 +1,848 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alex/ontologies/2024/10/untitled-ontology-14/"
+     xml:base="http://www.semanticweb.org/alex/ontologies/2024/10/untitled-ontology-14/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:proyectoEstandares="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_contiene_medicos -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_contiene_medicos">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_es_contenido_por_departamento"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_es_contenido_por_hospital -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_es_contenido_por_hospital">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_contiene_departamento"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_hecho_en_hospital -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_hecho_en_hospital">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_historial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_pertenece_a_paciente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_pertenece_a_paciente">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_tiene_historial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_tiene_tratamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_tiene_tratamiento">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_pertenece_a_historial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_contiene_departamento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_contiene_departamento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_historial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_historial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_tratamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_tiene_tratamiento">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_hecho_en_hospital"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_se_administra_en_tratamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_se_administra_en_tratamiento">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_es_administrado_medicamento"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_es_contenido_por_departamento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_es_contenido_por_departamento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_tiene_historial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_tiene_historial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_necesita_ser_monitoreado_por_tratamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_necesita_ser_monitoreado_por_tratamiento">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_necesita_monitorear_parametro_de_monitorizacion"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_es_administrado_medicamento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_es_administrado_medicamento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_hecho_en_hospital -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_hecho_en_hospital">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_necesita_monitorear_parametro_de_monitorizacion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_necesita_monitorear_parametro_de_monitorizacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_pertenece_a_historial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_pertenece_a_historial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_extension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_extension">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_servicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#departamento_servicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_categoria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_categoria">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_severida -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_severida">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_sintoma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#enfermedad_sintoma">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_fecha -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#historial_fecha">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_calle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_calle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_ciudad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_ciudad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_codigo_postal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_codigo_postal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_pais -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_pais">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#hospital_telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_efecto_secundario -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_efecto_secundario">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamento_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamiento_frecuencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medicamiento_frecuencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_anos_experiencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_anos_experiencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_dia_laboral -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_dia_laboral">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_especialidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_especialidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_horas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_horas">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#medico_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_apellido -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_apellido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_calle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_calle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_ciudad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_ciudad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_codigo_postal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_codigo_postal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_correo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_correo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_dni -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_dni">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_etnia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_etnia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_fecha_nacimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_fecha_nacimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nss -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_nss">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_pais -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_pais">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_sexo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_sexo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#paciente_telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_referencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_referencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_unidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#parametro_unidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_dias_duracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_dias_duracion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_frecuencia_dosis -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_frecuencia_dosis">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_via_administracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#tratamiento_via_administracion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Atenolol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Atenolol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <proyectoEstandares:medicamento_se_administra_en_tratamiento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Terapia_Antirretroviral_para_VIH"/>
+        <proyectoEstandares:medicamento_efecto_secundario>Fatiga</proyectoEstandares:medicamento_efecto_secundario>
+        <proyectoEstandares:medicamento_efecto_secundario>Lagrimeo excesivo</proyectoEstandares:medicamento_efecto_secundario>
+        <proyectoEstandares:medicamento_efecto_secundario>Mucosidad nasal</proyectoEstandares:medicamento_efecto_secundario>
+        <proyectoEstandares:medicamento_nombre>Atenolol</proyectoEstandares:medicamento_nombre>
+        <proyectoEstandares:medicamiento_frecuencia>Solo en la mañana</proyectoEstandares:medicamiento_frecuencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Buenaventura_René_Bustamante_Iglesia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Buenaventura_René_Bustamante_Iglesia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medico"/>
+        <proyectoEstandares:medico_es_contenido_por_departamento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Cardiología"/>
+        <proyectoEstandares:medico_anos_experiencia rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</proyectoEstandares:medico_anos_experiencia>
+        <proyectoEstandares:medico_dia_laboral>Lunes</proyectoEstandares:medico_dia_laboral>
+        <proyectoEstandares:medico_dia_laboral>Miércoles</proyectoEstandares:medico_dia_laboral>
+        <proyectoEstandares:medico_dia_laboral>Viernes</proyectoEstandares:medico_dia_laboral>
+        <proyectoEstandares:medico_especialidad>Cardiología</proyectoEstandares:medico_especialidad>
+        <proyectoEstandares:medico_horas>9:00 - 16:00</proyectoEstandares:medico_horas>
+        <proyectoEstandares:medico_nombre>Buenaventura René Bustamante Iglesia</proyectoEstandares:medico_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Cardiología -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Cardiología">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Departamento"/>
+        <proyectoEstandares:departamento_es_contenido_por_hospital rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital_Valladolid"/>
+        <proyectoEstandares:departamento_nombre>1119</proyectoEstandares:departamento_nombre>
+        <proyectoEstandares:departamento_nombre>Cardiología</proyectoEstandares:departamento_nombre>
+        <proyectoEstandares:departamento_servicio>Consulta de cardiología</proyectoEstandares:departamento_servicio>
+        <proyectoEstandares:departamento_servicio>Ecocardiografía</proyectoEstandares:departamento_servicio>
+        <proyectoEstandares:departamento_servicio>Electrofisiología</proyectoEstandares:departamento_servicio>
+        <proyectoEstandares:departamento_servicio>Rehabilitación cardiaca</proyectoEstandares:departamento_servicio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial1JuanAgustinContreras -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial1JuanAgustinContreras">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Historial"/>
+        <proyectoEstandares:historial_pertenece_a_paciente rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Juan_Agustín_Contreras"/>
+        <proyectoEstandares:historial_tiene_tratamiento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Terapia_Antirretroviral_para_VIH"/>
+        <proyectoEstandares:historial_fecha rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1976-03-20</proyectoEstandares:historial_fecha>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital_Valladolid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital_Valladolid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Hospital"/>
+        <proyectoEstandares:hospital_tiene_tratamiento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Terapia_Antirretroviral_para_VIH"/>
+        <proyectoEstandares:hospital_calle>Callejón Ariadna Torre 84 Piso 9</proyectoEstandares:hospital_calle>
+        <proyectoEstandares:hospital_ciudad>Málaga</proyectoEstandares:hospital_ciudad>
+        <proyectoEstandares:hospital_codigo_postal>10127</proyectoEstandares:hospital_codigo_postal>
+        <proyectoEstandares:hospital_email>gilcasals@example.com</proyectoEstandares:hospital_email>
+        <proyectoEstandares:hospital_nombre>Hospital Valladolid</proyectoEstandares:hospital_nombre>
+        <proyectoEstandares:hospital_pais>España</proyectoEstandares:hospital_pais>
+        <proyectoEstandares:hospital_telefono>+34943151090</proyectoEstandares:hospital_telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Juan_Agustín_Contreras -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Juan_Agustín_Contreras">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Paciente"/>
+        <proyectoEstandares:paciente_apellido>Contreras</proyectoEstandares:paciente_apellido>
+        <proyectoEstandares:paciente_calle>Calle Central 38</proyectoEstandares:paciente_calle>
+        <proyectoEstandares:paciente_ciudad>Sevilla</proyectoEstandares:paciente_ciudad>
+        <proyectoEstandares:paciente_codigo_postal>58627</proyectoEstandares:paciente_codigo_postal>
+        <proyectoEstandares:paciente_correo>juan_agustín.contreras@gmail.com</proyectoEstandares:paciente_correo>
+        <proyectoEstandares:paciente_dni>63297024J</proyectoEstandares:paciente_dni>
+        <proyectoEstandares:paciente_etnia>Judío</proyectoEstandares:paciente_etnia>
+        <proyectoEstandares:paciente_fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1941-11-12</proyectoEstandares:paciente_fecha_nacimiento>
+        <proyectoEstandares:paciente_nombre>Juan Agustín</proyectoEstandares:paciente_nombre>
+        <proyectoEstandares:paciente_pais>España</proyectoEstandares:paciente_pais>
+        <proyectoEstandares:paciente_sexo>masculino</proyectoEstandares:paciente_sexo>
+        <proyectoEstandares:paciente_telefono>+34 687 781 124</proyectoEstandares:paciente_telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Presión_arterial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Presión_arterial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Parametro_Monitorizacion"/>
+        <proyectoEstandares:parametro_nombre>Presión arterial</proyectoEstandares:parametro_nombre>
+        <proyectoEstandares:parametro_referencia>120/180</proyectoEstandares:parametro_referencia>
+        <proyectoEstandares:parametro_unidad>mmhg</proyectoEstandares:parametro_unidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Risperidona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Risperidona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Medicamento"/>
+        <proyectoEstandares:medicamento_efecto_secundario>Ganas frecuentes de orinar</proyectoEstandares:medicamento_efecto_secundario>
+        <proyectoEstandares:medicamento_nombre>Risperidona</proyectoEstandares:medicamento_nombre>
+        <proyectoEstandares:medicamiento_frecuencia>Diariamente</proyectoEstandares:medicamiento_frecuencia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Temperatura_corporal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Temperatura_corporal">
+        <proyectoEstandares:parametro_nombre>Temperatura Corporal</proyectoEstandares:parametro_nombre>
+        <proyectoEstandares:parametro_referencia>36.5-37.5</proyectoEstandares:parametro_referencia>
+        <proyectoEstandares:parametro_unidad>ºC</proyectoEstandares:parametro_unidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Terapia_Antirretroviral_para_VIH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Terapia_Antirretroviral_para_VIH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <proyectoEstandares:tratamiento_es_administrado_medicamento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Risperidona"/>
+        <proyectoEstandares:tratamiento_necesita_monitorear_parametro_de_monitorizacion rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Presión_arterial"/>
+        <proyectoEstandares:enfermedad_categoria>Inmunológica</proyectoEstandares:enfermedad_categoria>
+        <proyectoEstandares:enfermedad_nombre>Síndrome de Inmunodeficiencia Adquirida (SIDA)</proyectoEstandares:enfermedad_nombre>
+        <proyectoEstandares:enfermedad_severida>Severa (3)</proyectoEstandares:enfermedad_severida>
+        <proyectoEstandares:enfermedad_sintoma>Aumento de la frecuencia urinaria</proyectoEstandares:enfermedad_sintoma>
+        <proyectoEstandares:enfermedad_sintoma>Erupciones cutáneas</proyectoEstandares:enfermedad_sintoma>
+        <proyectoEstandares:enfermedad_sintoma>Sabor metálico en la boca</proyectoEstandares:enfermedad_sintoma>
+        <proyectoEstandares:enfermedad_sintoma>Tos con sangre</proyectoEstandares:enfermedad_sintoma>
+        <proyectoEstandares:tratamiento_dias_duracion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">69</proyectoEstandares:tratamiento_dias_duracion>
+        <proyectoEstandares:tratamiento_frecuencia_dosis>Cada 3 horas</proyectoEstandares:tratamiento_frecuencia_dosis>
+        <proyectoEstandares:tratamiento_id>67373abd5922963a1da050d1</proyectoEstandares:tratamiento_id>
+        <proyectoEstandares:tratamiento_nombre>Terapia Antirretroviral para VIH</proyectoEstandares:tratamiento_nombre>
+        <proyectoEstandares:tratamiento_via_administracion>Intracavitaria</proyectoEstandares:tratamiento_via_administracion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento_de_Acné_Severo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento_de_Acné_Severo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Tratamiento"/>
+        <proyectoEstandares:tratamiento_es_administrado_medicamento rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Risperidona"/>
+        <proyectoEstandares:tratamiento_necesita_monitorear_parametro_de_monitorizacion rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Presión_arterial"/>
+        <proyectoEstandares:tratamiento_necesita_monitorear_parametro_de_monitorizacion rdf:resource="http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#Temperatura_corporal"/>
+        <proyectoEstandares:enfermedad_categoria>Derma</proyectoEstandares:enfermedad_categoria>
+        <proyectoEstandares:enfermedad_nombre>Acné Dermatológica</proyectoEstandares:enfermedad_nombre>
+        <proyectoEstandares:enfermedad_severida>Severa (3)</proyectoEstandares:enfermedad_severida>
+        <proyectoEstandares:enfermedad_sintoma>Sofocos</proyectoEstandares:enfermedad_sintoma>
+        <proyectoEstandares:tratamiento_dias_duracion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">66</proyectoEstandares:tratamiento_dias_duracion>
+        <proyectoEstandares:tratamiento_frecuencia_dosis>Cada 6 horas</proyectoEstandares:tratamiento_frecuencia_dosis>
+        <proyectoEstandares:tratamiento_id>67373abd5922963a1da050e2</proyectoEstandares:tratamiento_id>
+        <proyectoEstandares:tratamiento_nombre>Tratamiento de Acné Severo</proyectoEstandares:tratamiento_nombre>
+        <proyectoEstandares:tratamiento_via_administracion>Intratecal</proyectoEstandares:tratamiento_via_administracion>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

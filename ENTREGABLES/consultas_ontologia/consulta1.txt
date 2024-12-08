@@ -1,0 +1,15 @@
+Lista de tratamientos por hospital separados por una ", "
+
+PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
+
+SELECT
+  ?hospital_nombre
+  (GROUP_CONCAT(?tratamiento_nombre; separator=", ") AS ?tratamientos)
+WHERE {
+  ?hospital rdf:type o:Hospital .
+  ?hospital o:hospital_nombre ?hospital_nombre .
+  ?hospital o:hospital_tiene_tratamiento ?tratamiento .
+  ?tratamiento o:tratamiento_nombre ?tratamiento_nombre .
+}
+GROUP BY ?hospital_nombre
+
