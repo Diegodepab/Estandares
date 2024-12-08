@@ -1,7 +1,3 @@
-Información general de los tratamientos (nombre, duración, frecuencia de dosis y vía de administración
-
-
-
 PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
 
 SELECT  ?tratamiento

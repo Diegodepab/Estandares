@@ -1,6 +1,3 @@
-Resultados de Tratamiento de Diabetes Tipo 2 en mayores de 50 (DNI	Fecha de Nacimiento	Sexo	Etnia	Teléfono	Correo	Dirección)
-
-
 PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
 
 SELECT

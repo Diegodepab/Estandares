@@ -1,5 +1,3 @@
-Lista de tratamientos por hospital separados por una ", "
-
 PREFIX o: <http://www.semanticweb.org/ontologies/2024/10/proyectoEstandares#>
 
 SELECT
