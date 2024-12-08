@@ -2,14 +2,13 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD
 import json
 
-def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_path_tratamientos, salida_path, max_items=-1):
+def rellenar_ontologia_completa(json_path_pacientes, json_path_hospitales, json_path_tratamientos, salida_path):
     """
     Rellena una ontología con datos de un JSON de pacientes, hospitales y tratamientos.
     
     :param ontologia_vacia_path: Ruta al archivo Turtle con la ontología vacía.
     :param json_path: Ruta al archivo JSON con los datos.
     :param salida_path: Ruta para guardar la ontología rellenada.
-    :param max_items: Número máximo de pacientes a procesar, opcional.
     """
 
     # Definir el namespace base
@@ -452,8 +451,7 @@ def insertar_pacientes(g, pacientes, BASE):
                         g.add((paciente_uri, prop, value_literal))
                           
     '''
-rellenar_ontologia_completa(json_path_pacientes = "../../data/pacientes.json",
-                             json_path_hospitales = "../../data/hospitales.json",
-                               json_path_tratamientos = "../../data/tratamientos.json",
-                                 salida_path  = "../../data/ontologia_completa/ontologia_completa.ttl",
-                                   max_items=None)
+rellenar_ontologia_completa(json_path_pacientes = "./data/pacientes.json",
+                             json_path_hospitales = "./data/hospitales.json",
+                               json_path_tratamientos = "./data/tratamientos.json",
+                                 salida_path  = "./ontologia_completa.ttl")
